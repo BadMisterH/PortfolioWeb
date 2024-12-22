@@ -1,19 +1,15 @@
 import * as THREE from 'https://unpkg.com/three@0.157.0/build/three.module.js';
 
 let scene, camera, renderer, cube;
-
-// Création d'un chargeur de textures
 const textureLoader = new THREE.TextureLoader();
 
 function init() {
-    // Initialisation de la scène
     scene = new THREE.Scene();
-
-    // Initialisation de la caméra
+    
+    // Caméra plus proche pour une meilleure visibilité
     camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-    camera.position.z = 5;
+    camera.position.z = 3.5;
 
-    // Initialisation du renderer
     renderer = new THREE.WebGLRenderer({
         antialias: true,
         alpha: true,
@@ -27,26 +23,49 @@ function init() {
     container.innerHTML = '';
     container.appendChild(renderer.domElement);
 
-    // Chargement de la texture depuis BK.jpg
+    // Chargement de la texture
     const texture = textureLoader.load('../assets/img/BK.jpg', () => {
         console.log('Texture chargée avec succès.');
 
-        // Création du cube avec cette texture
         const geometry = new THREE.BoxGeometry(2, 2, 2);
-        const material = new THREE.MeshBasicMaterial({
-            map: texture, // Applique la texture sur toutes les faces
+        
+        // Amélioration du matériau pour plus de brillance et d'effets
+        const material = new THREE.MeshPhongMaterial({
+            map: texture,
+            shininess: 100,
+            specular: new THREE.Color(0x00ff9d),
+            emissive: new THREE.Color(0x002211),
+            emissiveIntensity: 0.2,
+            transparent: true,
+            opacity: 0.95
         });
 
         cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 
-        // Éclairage
+        // Ajout d'un wireframe pour les contours néon
+        const wireframeGeometry = new THREE.EdgesGeometry(geometry);
+        const wireframeMaterial = new THREE.LineBasicMaterial({
+            color: 0x00ff9d,
+            transparent: true,
+            opacity: 0.5,
+            linewidth: 1
+        });
+        const wireframe = new THREE.LineSegments(wireframeGeometry, wireframeMaterial);
+        cube.add(wireframe);
+
+        // Éclairage amélioré
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
 
-        const pointLight = new THREE.PointLight(0xffffff, 1);
-        pointLight.position.set(5, 5, 5);
-        scene.add(pointLight);
+        // Points lumineux néon
+        const pointLight1 = new THREE.PointLight(0x00ff9d, 1);
+        pointLight1.position.set(5, 5, 5);
+        scene.add(pointLight1);
+
+        const pointLight2 = new THREE.PointLight(0x00ff9d, 0.8);
+        pointLight2.position.set(-5, -5, -5);
+        scene.add(pointLight2);
 
         animate();
     }, undefined, (error) => {
@@ -57,16 +76,30 @@ function init() {
 function animate() {
     requestAnimationFrame(animate);
 
-    // Rotation fluide
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    if (cube) {
+        // Animation plus fluide et naturelle
+        const time = Date.now() * 0.001;
+        cube.rotation.x = Math.sin(time * 0.5) * 0.2;
+        cube.rotation.y += 0.01;
+    }
 
     renderer.render(scene, camera);
 }
 
-// Initialiser lorsque le DOM est chargé
+// Initialisation
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
 } else {
     init();
 }
+
+// Gestion du redimensionnement
+window.addEventListener('resize', () => {
+    const container = document.getElementById('threejs-cube');
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+});
