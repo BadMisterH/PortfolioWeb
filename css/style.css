@@ -452,6 +452,14 @@ header {
         display: none;
     }
 
+    #threejs-cube canvas{
+        margin-top: 80px !important;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+
     .nav-links {
         gap: 0.5rem;
     }
