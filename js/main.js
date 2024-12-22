@@ -3,7 +3,8 @@ const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
 
 const observerOptions = {
-    threshold: 0.5
+    threshold: 0.2,
+    rootMargin: '-100px 0px -100px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -19,6 +20,31 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, observerOptions);
+
+// Also handle initial state based on scroll position
+function setInitialActiveSection() {
+    const scrollPosition = window.scrollY + window.innerHeight / 3;
+    
+    let currentSection = sections[0];
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollPosition >= sectionTop) {
+            currentSection = section;
+        }
+    });
+    
+    const currentId = currentSection.getAttribute('id');
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentId}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Call setInitialActiveSection on page load and scroll
+document.addEventListener('DOMContentLoaded', setInitialActiveSection);
+document.addEventListener('scroll', setInitialActiveSection);
 
 sections.forEach(section => observer.observe(section));
 
