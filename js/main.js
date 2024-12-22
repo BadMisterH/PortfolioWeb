@@ -701,13 +701,23 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
 });
 
-// Radar Wave Effect
+// Radar Wave Effect with Sound
 document.addEventListener('click', (e) => {
+    // Créer l'effet d'onde
     const wave = document.createElement('div');
     wave.classList.add('radar-wave');
     wave.style.left = `${e.clientX}px`;
     wave.style.top = `${e.clientY}px`;
     document.body.appendChild(wave);
+
+    // Jouer le son du radar
+    const radarSound = document.getElementById('radarSound');
+    if (radarSound) {
+        radarSound.currentTime = 0; // Réinitialiser le son s'il est déjà en cours
+        radarSound.play().catch(error => {
+            console.log('Erreur lors de la lecture du son:', error);
+        });
+    }
 
     // Supprimer l'élément une fois l'animation terminée
     wave.addEventListener('animationend', () => {
