@@ -2199,18 +2199,66 @@ header {
     gap: 4rem;
     align-items: center;
     padding: 2rem;
+    margin-top: 3rem;
 }
 
 .contact-info-card {
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(0, 255, 255, 0.1);
-    border-radius: 10px;
+    background: rgba(0, 26, 15, 0.9);
+    border: 1px solid var(--neon-green);
+    border-radius: 15px;
     padding: 2.5rem;
     backdrop-filter: blur(10px);
 }
 
 .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 255, 157, 0.2);
+}
+
+.signal-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.signal-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.signal-waves {
+    display: flex;
+    align-items: center;
+}
+
+.signal-waves span {
+    display: block;
+    width: 3px;
+    height: 15px;
+    margin: 0 2px;
+    background: var(--neon-green);
+    animation: wave 1.5s infinite;
+}
+
+.signal-waves span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.signal-waves span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.card-header h3 {
+    color: var(--neon-green);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
 }
 
 .contact-details {
@@ -2221,31 +2269,31 @@ header {
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
-    color: #fff;
+    gap: 1rem;
 }
 
 .contact-item i {
-    color: cyan;
-    margin-right: 1rem;
+    color: var(--neon-green);
     font-size: 1.2rem;
 }
 
 .social-links {
     display: flex;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 255, 157, 0.2);
 }
 
 .social-link {
-    color: cyan;
+    color: var(--text-color);
     font-size: 1.5rem;
     transition: all 0.3s ease;
 }
 
 .social-link:hover {
-    color: #fff;
+    color: var(--neon-green);
     transform: translateY(-3px);
-    text-shadow: 0 0 10px cyan;
+    text-shadow: 0 0 10px var(--neon-green);
 }
 
 .social-link::before {
@@ -2825,4 +2873,268 @@ header {
     color: var(--neon-green);
     transform: translateY(-3px);
     text-shadow: 0 0 10px var(--neon-green);
+}
+
+.social-link::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    background: rgba(0, 26, 15, 0.9);
+    border: 1px solid var(--neon-green);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+.contact-form-container {
+    background: rgba(0, 26, 15, 0.9);
+    border: 1px solid var(--neon-green);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.input-container {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.input-container input,
+.input-container textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1rem 0;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: 'Cyber', sans-serif;
+}
+
+.input-container textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.input-container label {
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    color: rgba(230, 255, 242, 0.7);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label,
+.input-container textarea:focus ~ label,
+.input-container textarea:valid ~ label {
+    top: -1rem;
+    font-size: 0.8rem;
+    color: var(--neon-green);
+}
+
+.input-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 255, 157, 0.3);
+}
+
+.input-border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon-green);
+    transition: width 0.3s ease;
+}
+
+.input-container input:focus ~ .input-border::after,
+.input-container textarea:focus ~ .input-border::after {
+    width: 100%;
+}
+
+.submit-btn {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    font-family: 'Cyber', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: rgba(0, 255, 157, 0.1);
+}
+
+.btn-scanner {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 157, 0.3),
+        transparent
+    );
+    animation: scan 2s linear infinite;
+}
+
+.btn-glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: var(--neon-green);
+    animation: glitch 0.3s linear infinite;
+    animation-play-state: paused;
+}
+
+.submit-btn:hover .btn-glitch {
+    animation-play-state: running;
+}
+
+@keyframes wave {
+    0%, 100% {
+        height: 5px;
+    }
+    50% {
+        height: 15px;
+    }
+}
+
+@keyframes scan {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        opacity: 0;
+        transform: translate(0);
+    }
+    1% {
+        opacity: 0.1;
+        transform: translate(-2px, 2px);
+    }
+    2% {
+        opacity: 0;
+        transform: translate(0);
+    }
+    70% {
+        opacity: 0;
+        transform: translate(0);
+    }
+    71% {
+        opacity: 0.1;
+        transform: translate(2px, -2px);
+    }
+    72% {
+        opacity: 0;
+        transform: translate(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0);
+    }
+}
+
+/* Styles des boutons UI */
+.contact-info {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.ui-button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(0, 26, 15, 0.9);
+    border: 1px solid var(--neon-green);
+    border-radius: 8px;
+    color: var(--neon-green);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ui-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 157, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.ui-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+    background: rgba(0, 255, 157, 0.1);
+}
+
+.ui-button:hover::before {
+    left: 100%;
+}
+
+.ui-button i {
+    font-size: 1.2rem;
+}
+
+/* Media Queries pour les boutons UI */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .ui-button {
+        width: 100%;
+        justify-content: center;
+        padding: 0.7rem 1.2rem;
+    }
 }

@@ -1,0 +1,40 @@
+#threejs-cube {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#threejs-cube canvas {
+    width: 200% !important;
+    height: 200% !important;
+    outline: none;
+    display: block;
+}
+
+.face-label {
+    position: absolute;
+    color: var(--neon-green);
+    text-shadow: 0 0 10px var(--neon-green);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    pointer-events: none;
+    padding: 5px 10px;
+    background: rgba(0, 26, 15, 0.7);
+    border: 1px solid var(--neon-green);
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+}
