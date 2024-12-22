@@ -277,14 +277,25 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--neon-green);
     z-index: 2;
-    box-shadow: 0 0 20px rgba(0, 255, 157, 0.3),
-                inset 0 0 20px rgba(0, 255, 157, 0.3);
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.profile-container:hover .profile-image {
+    transform: scale(1.1);
 }
 
 .profile-overlay {
@@ -293,9 +304,45 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, 
-        rgba(0, 255, 157, 0.3),
-        transparent 70%);
+    background: linear-gradient(
+        45deg,
+        rgba(0, 255, 157, 0.2) 0%,
+        transparent 60%
+    );
+    mix-blend-mode: screen;
+}
+
+.profile-container::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        var(--neon-green),
+        transparent
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.7;
+    animation: borderRotate 4s linear infinite;
+}
+
+@keyframes borderRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .skill-points {
@@ -1003,54 +1050,6 @@ header {
     transform: scale(1.2);
 }
 
-/* Responsive Design */
-@media (max-width: 1400px) {
-    .carousel-container {
-        max-width: 1200px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .project-card {
-        flex: 0 0 calc(100% - 2rem);
-    }
-    
-    .carousel-button.prev {
-        left: 1rem;
-    }
-    
-    .carousel-button.next {
-        right: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .project-image {
-        height: 250px;
-    }
-    
-    .project-content h3 {
-        font-size: 1.5rem;
-    }
-    
-    .project-content p {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-    
-    .project-link {
-        padding: 0.8rem;
-        font-size: 1rem;
-    }
-    
-    .carousel-button {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-}
-
-/* Carousel Navigation Enhancements */
 .carousel-progress {
     position: absolute;
     bottom: 0;
@@ -2312,5 +2311,12 @@ header {
 @media (max-width: 768px) {
     .contact {
         padding: 4rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        width: 150px;
+        height: 150px;
     }
 }
