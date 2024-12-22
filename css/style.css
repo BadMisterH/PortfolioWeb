@@ -19,10 +19,77 @@
 
 body {
     font-family: 'Cyber', sans-serif;
-    background-color: var(--dark-bg);
+    background: var(--dark-bg);
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at center, transparent 0%, rgba(0, 26, 15, 0.8) 100%),
+        linear-gradient(90deg, rgba(0, 255, 157, 0.03) 1px, transparent 1px) 0 0 / 40px 40px,
+        linear-gradient(rgba(0, 255, 157, 0.03) 1px, transparent 1px) 0 0 / 40px 40px;
+    pointer-events: none;
+    z-index: -2;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200vmax;
+    height: 200vmax;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(0, 255, 157, 0.1) 10deg,
+        transparent 20deg
+    );
+    animation: radarSweep 8s linear infinite;
+    transform-origin: center;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.radar-dot {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    animation: dotPulse 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.radar-circles {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200vmax;
+    height: 200vmax;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.radar-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(0, 255, 157, 0.1);
+    border-radius: 50%;
+    animation: circleExpand 4s ease-out infinite;
 }
 
 /* Grid Overlay */
@@ -376,6 +443,41 @@ header {
     0% { opacity: 0.5; }
     50% { opacity: 1; }
     100% { opacity: 0.5; }
+}
+
+/* Animations radar */
+@keyframes radarSweep {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+        box-shadow: 0 0 10px var(--neon-green);
+    }
+}
+
+@keyframes circleExpand {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
 }
 
 /* Responsive Design */
@@ -1928,7 +2030,11 @@ header {
 .experiences {
     padding: 4rem 0;
     position: relative;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0, 255, 157, 0.05) 50%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(180deg, 
+        rgba(0,0,0,0) 0%, 
+        rgba(0, 255, 157, 0.05) 50%, 
+        rgba(0,0,0,0) 100%
+    );
 }
 
 .timeline-wrapper {
@@ -1943,7 +2049,12 @@ header {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, rgba(0, 255, 157, 0) 0%, var(--neon-green) 10%, var(--neon-green) 90%, rgba(0, 255, 157, 0) 100%);
+    background: linear-gradient(180deg, 
+        rgba(0, 255, 157, 0) 0%, 
+        var(--neon-green) 10%, 
+        var(--neon-green) 90%, 
+        rgba(0, 255, 157, 0) 100%
+    );
     transform: translateX(-50%);
     box-shadow: 0 0 15px var(--neon-green);
 }
@@ -2026,16 +2137,24 @@ header {
     inset: 0;
     border-radius: 15px;
     padding: 1px;
-    background: linear-gradient(45deg, transparent, rgba(0, 255, 157, 0.3), transparent);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    background: linear-gradient(45deg, 
+        transparent 0%,
+        rgba(0, 255, 157, 0.3) 50%,
+        transparent 100%
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
 }
 
 .timeline-content:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 255, 157, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 255, 157, 0.1);
 }
 
 .timeline-header {
@@ -3145,4 +3264,136 @@ header {
         justify-content: center;
         padding: 0.7rem 1.2rem;
     }
+}
+
+/* Animation plus lente pour l'apparition des éléments */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* Délais d'animation pour différents éléments */
+.section-title {
+    animation-delay: 0.3s;
+}
+
+.hero-content {
+    animation-delay: 0.6s;
+}
+
+.about-content {
+    animation-delay: 0.4s;
+}
+
+.skills-content {
+    animation-delay: 0.5s;
+}
+
+.project-card {
+    animation-delay: 0.3s;
+}
+
+.contact-info-card {
+    animation-delay: 0.4s;
+}
+
+#threejs-cube {
+    animation-delay: 0.7s;
+}
+
+.social-links {
+    animation-delay: 0.8s;
+}
+
+/* Animation plus lente pour les effets de survol */
+.button-primary,
+.nav-link,
+.social-link,
+.project-card,
+.skill-tag {
+    transition: all 0.4s ease-out;
+}
+
+/* Animation plus lente pour les effets de scanner */
+@keyframes scanEffect {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.scan-line {
+    animation: scanEffect 3s linear infinite;
+}
+
+/* Animation plus lente pour les effets de pulsation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.pulse-effect {
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+/* Animation plus lente pour les vagues */
+@keyframes wave {
+    0% {
+        height: 5px;
+    }
+    50% {
+        height: 15px;
+    }
+    100% {
+        height: 5px;
+    }
+}
+
+.signal-waves span {
+    animation: wave 2s ease-in-out infinite;
+}
+
+.signal-waves span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.signal-waves span:nth-child(3) {
+    animation-delay: 0.8s;
 }
