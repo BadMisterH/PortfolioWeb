@@ -2561,3 +2561,213 @@ header {
         display: none;
     }
 }
+
+/* Responsive Design pour Compétences et Projets */
+@media (max-width: 1400px) {
+    .competences-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .projects-container {
+        gap: 2rem;
+    }
+
+    .project-card {
+        flex: 0 0 calc(33.33% - 2rem);
+    }
+}
+
+@media (max-width: 1200px) {
+    .competences-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        flex: 0 0 calc(50% - 2rem);
+    }
+
+    .competence-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .competences-container {
+        padding: 2rem;
+    }
+
+    .competence-card {
+        min-height: auto;
+    }
+
+    .competence-icon {
+        font-size: 2rem;
+    }
+
+    .project-card {
+        flex: 0 0 calc(100% - 2rem);
+        margin: 1rem;
+    }
+
+    .project-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .radar-chart{
+        display: none;
+    }
+
+    .competences-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .competence-card {
+        text-align: center;
+        padding: 1.2rem;
+    }
+
+    .competence-level {
+        justify-content: center;
+    }
+
+    .projects-container {
+        padding: 1rem;
+    }
+
+    .project-card {
+        margin: 0.5rem;
+    }
+
+    .project-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .competences-container {
+        padding: 1rem;
+    }
+
+    .competence-card {
+        padding: 1rem;
+    }
+
+    .competence-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .competence-name {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .competence-description {
+        font-size: 0.9rem;
+    }
+
+    .project-card {
+        margin: 0.5rem 0;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: 1rem;
+    }
+
+    .project-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-content p {
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+    }
+
+    .project-tags {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .project-tag {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .project-links {
+        gap: 0.5rem;
+    }
+
+    .project-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .competence-card {
+        padding: 0.8rem;
+    }
+
+    .competence-icon {
+        font-size: 1.3rem;
+    }
+
+    .project-image {
+        height: 160px;
+    }
+
+    .project-content {
+        padding: 0.8rem;
+    }
+
+    .project-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-tag {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Ajustements pour les compétences en mode paysage */
+@media (max-height: 600px) and (orientation: landscape) {
+    .competences-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .competence-card {
+        padding: 1rem;
+    }
+
+    .project-image {
+        height: 150px;
+    }
+}
+
+/* Amélioration des animations pour les appareils mobiles */
+@media (hover: none) {
+    .competence-card:hover,
+    .project-card:hover {
+        transform: none;
+    }
+
+    .project-card:hover .project-image {
+        transform: none;
+    }
+
+    .project-link:hover {
+        transform: none;
+    }
+}
