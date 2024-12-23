@@ -7,12 +7,13 @@
     padding: 20px;
     border-radius: 10px;
     backdrop-filter: blur(10px);
-
+    width: 600px;
+    height: 600px;
 }
 
 #threejs-cube canvas {
-    width: 200%;
-    height: 200%;
+    width: 100%;
+    height: 100%;
     outline: none;
     display: block;
     filter: drop-shadow(0 0 10px rgba(0, 255, 157, 0.3));
@@ -37,15 +38,24 @@
 }
 
 /* Media Queries pour la responsivité */
+@media (max-width: 1024px) {
+    #threejs-cube {
+        width: 500px;
+        height: 500px;
+    }
+}
+
 @media (max-width: 768px) {
     #threejs-cube {
-        width: 300px;
-        height: 300px;
+        width: 400px;
+        height: 400px;
     }
 }
 
 @media (max-width: 480px) {
     #threejs-cube {
-        height: 100px;
+        width: 300px;
+        height: 300px;
+        padding: 10px;
     }
 }

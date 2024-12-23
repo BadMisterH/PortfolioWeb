@@ -13,18 +13,21 @@ function init() {
     scene = new THREE.Scene();
     
     camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-    camera.position.z = 3.5;
+    camera.position.z = 4;
 
     renderer = new THREE.WebGLRenderer({
         antialias: true,
         alpha: true,
         powerPreference: "high-performance"
     });
-    renderer.setSize(500, 500);
-    renderer.setClearColor(0x000000, 0);
-    renderer.setPixelRatio(window.devicePixelRatio);
-
+    
+    // Ajuster la taille du rendu en fonction du conteneur
     const container = document.getElementById('threejs-cube');
+    const containerSize = Math.min(container.clientWidth, container.clientHeight);
+    renderer.setSize(containerSize, containerSize);
+    renderer.setClearColor(0x000000, 0);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
     container.innerHTML = '';
     const canvas = renderer.domElement;
     canvas.setAttribute('data-engine', 'three.js r157');
@@ -130,10 +133,11 @@ if (document.readyState === 'loading') {
 // Gestion du redimensionnement
 window.addEventListener('resize', () => {
     const container = document.getElementById('threejs-cube');
-    const width = container.clientWidth;
-    const height = container.clientHeight;
-
-    camera.aspect = width / height;
+    const containerSize = Math.min(container.clientWidth, container.clientHeight);
+    
+    camera.aspect = 1;
     camera.updateProjectionMatrix();
-    renderer.setSize(width, height);
+    
+    renderer.setSize(containerSize, containerSize);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
