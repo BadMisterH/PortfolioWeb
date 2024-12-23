@@ -19,6 +19,11 @@
     font-style: normal;
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Cyber', sans-serif;
     background: var(--dark-bg);
@@ -26,6 +31,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
+    width: 100%;
+    max-width: 100vw;
 }
 
 body::before {
@@ -1558,7 +1565,6 @@ header {
     transform: translateX(-50%) translateY(-10px);
     background: rgba(0, 26, 15, 0.95);
     border: 1px solid var(--neon-green);
-    border-radius: 10px;
     padding: 0.5rem;
     width: 200px;
     opacity: 0;
@@ -3556,5 +3562,36 @@ section {
 
     .ui-button:hover i {
         transform: none;
+    }
+}
+
+/* Ajout des media queries pour réduire la taille des polices des titres sur mobile */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-title {
+        font-size: 1.3rem;
+    }
+
+    .timeline-title {
+        font-size: 1.2rem;
     }
 }
