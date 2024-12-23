@@ -3350,6 +3350,10 @@ section {
         padding: 2rem 1rem;
     }
 
+    .contact-info-card{
+        right: 20px;
+    }
+
     .carousel-track {
         gap: 1.5rem;
     }
