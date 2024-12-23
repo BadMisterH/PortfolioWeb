@@ -14,7 +14,9 @@
 
 @font-face {
     font-family: 'Cyber';
-    src: url('../fonts/Cyber.woff2') format('woff2');
+    src: url('../fonts/Cyberpunk is not dead.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
@@ -145,6 +147,9 @@ header {
     font-size: 1.5rem;
     color: var(--neon-green);
     font-weight: bold;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .nav-links {
@@ -161,6 +166,9 @@ header {
     padding: 0.5rem 1rem;
     border-radius: 8px;
     transition: all 0.3s ease;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .nav-link:hover,
@@ -219,22 +227,35 @@ header {
     font-size: 0.8rem;
     color: var(--neon-green);
     letter-spacing: 2px;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
 }
 
 .name {
     font-size: 3rem;
     color: var(--text-color);
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+    font-family: 'Cyber', sans-serif;
 }
 
 .title {
     font-size: 1.5rem;
     color: var(--neon-green);
     margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Cyber', sans-serif;
 }
 
 .description {
+    font-size: 1rem;
+    line-height: 1.8;
     margin-bottom: 2rem;
+    font-family: 'Cyber', sans-serif;
+    letter-spacing: 1px;
 }
 
 .contact-info {
@@ -427,6 +448,10 @@ header {
     transform: rotate(var(--angle)) translateX(200px) rotate(calc(-1 * var(--angle)));
 }
 
+.font-contact{
+    font-family: 'Cyber', sans-serif;
+}
+
 .point-label {
     color: var(--neon-green);
     font-size: 0.9rem;
@@ -436,6 +461,9 @@ header {
     padding: 4px 8px;
     border-radius: 4px;
     border: 1px solid rgba(0, 255, 157, 0.3);
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Animations */
@@ -784,6 +812,8 @@ header {
     text-transform: uppercase;
     letter-spacing: 3px;
     position: relative;
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+    font-family: 'Cyber', sans-serif;
 }
 
 .section-title::after {
@@ -915,6 +945,9 @@ header {
     border: 1px solid rgba(0, 255, 157, 0.3);
     white-space: nowrap;
     transition: all 0.3s ease;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .data-value {
@@ -964,6 +997,9 @@ header {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .skill-tags {
@@ -980,6 +1016,9 @@ header {
     font-size: 0.9rem;
     border: 1px solid rgba(0, 255, 157, 0.3);
     transition: all 0.3s ease;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .skill-tag:hover {
@@ -1095,6 +1134,9 @@ header {
     border-radius: 4px;
     font-size: 0.8rem;
     border: 1px solid rgba(0, 255, 157, 0.3);
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .project-content {
@@ -1105,6 +1147,9 @@ header {
     color: var(--neon-green);
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .project-content p {
@@ -1112,6 +1157,8 @@ header {
     margin-bottom: 1rem;
     font-size: 0.9rem;
     opacity: 0.8;
+    font-family: 'Cyber', sans-serif;
+    letter-spacing: 1px;
 }
 
 .project-links {
@@ -1130,6 +1177,9 @@ header {
     border: 1px solid var(--neon-green);
     border-radius: 4px;
     transition: all 0.3s ease;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .project-link:hover {
@@ -1279,6 +1329,9 @@ header {
     font-size: 0.9rem;
     border: 1px solid var(--neon-green);
     transition: all 0.3s ease;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .project-tech span:hover {
@@ -1299,6 +1352,9 @@ header {
     margin-bottom: 1.2rem;
     font-size: 1.8rem;
     text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .project-content p {
@@ -1307,6 +1363,8 @@ header {
     line-height: 1.8;
     font-size: 1.1rem;
     flex-grow: 1;
+    font-family: 'Cyber', sans-serif;
+    letter-spacing: 1px;
 }
 
 .project-links {
@@ -1328,6 +1386,9 @@ header {
     background: rgba(0, 255, 157, 0.1);
     transition: all 0.3s ease;
     font-size: 1.1rem;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .project-link:hover {
@@ -1505,6 +1566,9 @@ header {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .carousel-button {
@@ -1668,6 +1732,9 @@ header {
     white-space: nowrap;
     text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
     transition: all 0.3s ease;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .data-value {
@@ -1685,6 +1752,9 @@ header {
     transition: all 0.3s ease;
     white-space: nowrap;
     box-shadow: 0 0 15px rgba(0, 255, 157, 0.2);
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .data-point:hover {
@@ -1800,6 +1870,7 @@ header {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+    font-family: 'Cyber', sans-serif;
 }
 
 .skill-tags {
@@ -1819,6 +1890,9 @@ header {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .skill-tag::before {
@@ -2129,6 +2203,8 @@ header {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    font-family: 'Cyber', sans-serif;
+    letter-spacing: 1px;
 }
 
 .timeline-content::before {
@@ -2168,12 +2244,18 @@ header {
     border-radius: 20px;
     font-size: 0.9em;
     color: var(--neon-green);
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .timeline-header h3 {
     color: var(--neon-green);
     font-size: 1.5em;
     margin: 10px 0;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .timeline-company {
@@ -2181,6 +2263,8 @@ header {
     color: #fff;
     font-size: 1.1em;
     opacity: 0.9;
+    font-family: 'Cyber', sans-serif;
+    letter-spacing: 1px;
 }
 
 .timeline-body ul {
@@ -2194,6 +2278,8 @@ header {
     margin-bottom: 12px;
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.5;
+    font-family: 'Cyber', sans-serif;
+    letter-spacing: 1px;
 }
 
 .timeline-body li::before {
@@ -2220,6 +2306,9 @@ header {
     color: var(--neon-green);
     font-size: 0.85em;
     transition: all 0.3s ease;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .timeline-tech span:hover {
@@ -2330,217 +2419,118 @@ header {
 }
 
 .contact-info-card {
-    background: rgba(0, 26, 15, 0.9);
-    border: 1px solid var(--neon-green);
+    background: rgba(0, 20, 12, 0.8);
+    border: 2px solid var(--neon-green);
     border-radius: 15px;
-    padding: 2.5rem;
-    backdrop-filter: blur(10px);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 255, 157, 0.2);
+    animation: borderGlow 4s infinite;
+}
+
+.contact-info-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        var(--neon-green), 
+        transparent 20%,
+        transparent 80%,
+        var(--neon-green)
+    );
+    border-radius: 15px;
+    z-index: -1;
+    animation: borderRotate 4s linear infinite;
 }
 
 .card-header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 2.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(0, 255, 157, 0.2);
+    margin-bottom: 2rem;
+    padding: 0.8rem;
+    background: rgba(0, 255, 157, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 157, 0.3);
 }
 
 .signal-indicator {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    position: relative;
+    width: 40px;
+    height: 40px;
 }
 
 .signal-dot {
-    width: 10px;
-    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
     background: var(--neon-green);
     border-radius: 50%;
-    animation: pulse 2s infinite;
+    box-shadow: 0 0 15px var(--neon-green);
 }
 
 .signal-waves {
-    display: flex;
-    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .signal-waves span {
-    display: block;
-    width: 3px;
-    height: 15px;
-    margin: 0 2px;
-    background: var(--neon-green);
-    animation: wave 1.5s infinite;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--neon-green);
+    border-radius: 50%;
+    animation: signalWave 2s infinite;
+    opacity: 0;
+}
+
+.signal-waves span:nth-child(1) {
+    animation-delay: 0s;
 }
 
 .signal-waves span:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: 0.4s;
 }
 
 .signal-waves span:nth-child(3) {
-    animation-delay: 0.4s;
+    animation-delay: 0.8s;
 }
 
 .card-header h3 {
     color: var(--neon-green);
-    font-size: 0.9rem;
+    font-family: 'Cyber', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
     letter-spacing: 2px;
-}
-
-.contact-details {
-    margin-bottom: 2.5rem;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    margin-bottom: 1.5rem;
     gap: 1rem;
-}
-
-.contact-item i {
-    color: var(--neon-green);
-    font-size: 1.2rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(0, 255, 157, 0.2);
-}
-
-.social-link {
-    color: var(--text-color);
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.social-link:hover {
-    color: var(--neon-green);
-    transform: translateY(-3px);
-    text-shadow: 0 0 10px var(--neon-green);
-}
-
-.social-link::before {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0.5rem;
-    background: rgba(0, 26, 15, 0.9);
-    border: 1px solid var(--neon-green);
-    border-radius: 4px;
-    font-size: 0.8rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.social-link:hover::before {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(-10px);
-}
-
-.contact-form-container {
-    background: rgba(0, 26, 15, 0.9);
-    border: 1px solid var(--neon-green);
-    border-radius: 15px;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
-}
-
-.form-group {
-    margin-bottom: 2rem;
-}
-
-.input-container {
-    position: relative;
-    margin-top: 1rem;
-}
-
-.input-container input,
-.input-container textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    padding: 1rem 0;
-    color: var(--text-color);
-    font-size: 1rem;
-    font-family: 'Cyber', sans-serif;
-}
-
-.input-container textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.input-container label {
-    position: absolute;
-    left: 0;
-    top: 1rem;
-    color: rgba(230, 255, 242, 0.7);
-    transition: all 0.3s ease;
-    pointer-events: none;
-}
-
-.input-container input:focus ~ label,
-.input-container input:valid ~ label,
-.input-container textarea:focus ~ label,
-.input-container textarea:valid ~ label {
-    top: -1rem;
-    font-size: 0.8rem;
-    color: var(--neon-green);
-}
-
-.input-border {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: rgba(0, 255, 157, 0.3);
-}
-
-.input-border::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--neon-green);
-    transition: width 0.3s ease;
-}
-
-.input-container input:focus ~ .input-border::after,
-.input-container textarea:focus ~ .input-border::after {
-    width: 100%;
-}
-
-.submit-btn {
-    position: relative;
-    width: 100%;
     padding: 1rem;
-    background: transparent;
-    border: 1px solid var(--neon-green);
-    color: var(--neon-green);
-    font-family: 'Cyber', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 2px;
-    cursor: pointer;
-    overflow: hidden;
+    background: rgba(0, 255, 157, 0.05);
+    border: 1px solid rgba(0, 255, 157, 0.2);
+    border-radius: 8px;
+    margin-bottom: 1rem;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.submit-btn:hover {
-    background: rgba(0, 255, 157, 0.1);
-}
-
-.btn-scanner {
+.contact-item::before {
+    content: '';
     position: absolute;
     top: 0;
     left: -100%;
@@ -2549,74 +2539,151 @@ header {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(0, 255, 157, 0.3),
+        rgba(0, 255, 157, 0.2),
         transparent
     );
-    animation: scan 2s linear infinite;
+    transition: 0.5s;
 }
 
-.btn-glitch {
+.contact-item:hover::before {
+    left: 100%;
+}
+
+.contact-item:hover {
+    transform: translateX(10px);
+    background: rgba(0, 255, 157, 0.1);
+    border-color: var(--neon-green);
+}
+
+.contact-item i {
+    color: var(--neon-green);
+    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 255, 157, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover i {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.5);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 255, 157, 0.2);
+}
+
+.social-link {
+    color: var(--neon-green);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-link::before {
+    content: attr(data-tooltip);
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background: rgba(0, 20, 12, 0.9);
+    color: var(--neon-green);
+    font-size: 0.8rem;
+    border-radius: 5px;
     opacity: 0;
-    background: var(--neon-green);
-    animation: glitch 0.3s linear infinite;
-    animation-play-state: paused;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-family: 'Cyber', sans-serif;
+    border: 1px solid var(--neon-green);
 }
 
-.submit-btn:hover .btn-glitch {
-    animation-play-state: running;
+.social-link:hover::before {
+    opacity: 1;
+    visibility: visible;
+    bottom: -40px;
 }
 
-@keyframes wave {
+.social-link:hover {
+    transform: translateY(-5px);
+    text-shadow: 0 0 10px var(--neon-green);
+}
+
+@keyframes signalWave {
+    0% {
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+    }
+    100% {
+        width: 40px;
+        height: 40px;
+        opacity: 0;
+    }
+}
+
+@keyframes borderGlow {
     0%, 100% {
-        height: 5px;
+        box-shadow: 0 0 25px rgba(0, 255, 157, 0.2);
     }
     50% {
-        height: 15px;
+        box-shadow: 0 0 35px rgba(0, 255, 157, 0.4);
     }
 }
 
-@keyframes scan {
+@keyframes borderRotate {
     0% {
-        left: -100%;
+        transform: rotate(0deg);
     }
     100% {
-        left: 100%;
+        transform: rotate(360deg);
     }
 }
 
-@keyframes glitch {
-    0% {
-        opacity: 0;
-        transform: translate(0);
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-info-card {
+        padding: 1.5rem;
     }
-    1% {
-        opacity: 0.1;
-        transform: translate(-2px, 2px);
+
+    .card-header {
+        padding: 0.6rem;
     }
-    2% {
-        opacity: 0;
-        transform: translate(0);
+
+    .contact-item {
+        padding: 0.8rem;
     }
-    70% {
-        opacity: 0;
-        transform: translate(0);
+
+    .social-link {
+        font-size: 1.3rem;
     }
-    71% {
-        opacity: 0.1;
-        transform: translate(2px, -2px);
+}
+
+@media (max-width: 480px) {
+    .contact-info-card {
+        padding: 1rem;
     }
-    72% {
-        opacity: 0;
-        transform: translate(0);
+
+    .card-header h3 {
+        font-size: 1rem;
     }
-    100% {
-        opacity: 0;
-        transform: translate(0);
+
+    .contact-item {
+        padding: 0.6rem;
+    }
+
+    .contact-item i {
+        font-size: 1rem;
     }
 }
 
@@ -2666,7 +2733,6 @@ header {
 @media (max-width: 992px) {
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
     }
 }
 
@@ -2952,12 +3018,17 @@ header {
 .project-content h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .project-content p {
     font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    font-family: 'Cyber', sans-serif;
+    letter-spacing: 1px;
 }
 
 .project-tech {
@@ -2970,6 +3041,9 @@ header {
 .tech-tag {
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
+    font-family: 'Cyber', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Tablettes et petits écrans */
@@ -3327,6 +3401,7 @@ section {
     overflow: hidden;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-family: 'Cyber', sans-serif;
 }
 
 .ui-button::before {
@@ -3388,6 +3463,15 @@ section {
 
 .ui-button:hover::after {
     opacity: 1;
+}
+
+@keyframes wave {
+    0%, 100% {
+        height: 5px;
+    }
+    50% {
+        height: 15px;
+    }
 }
 
 @keyframes scanEffect {
