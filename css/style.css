@@ -3229,7 +3229,7 @@ section {
 /* Espacement des compétences */
 .skills-container {
     padding: 4rem 2rem;
-    gap: 3rem;
+    gap: 7rem ;
 }
 
 .skills-grid {

@@ -1,6 +1,4 @@
 #threejs-cube {
-    width: 400px;
-    height: 400px;
     position: relative;
     margin-left: auto;
     display: flex;
@@ -13,8 +11,8 @@
 }
 
 #threejs-cube canvas {
-    width: 200% !important;
-    height: 200% !important;
+    width: 200%;
+    height: 200%;
     outline: none;
     display: block;
     filter: drop-shadow(0 0 10px rgba(0, 255, 157, 0.3));
@@ -48,7 +46,6 @@
 
 @media (max-width: 480px) {
     #threejs-cube {
-        width: 250px;
-        height: 250px;
+        height: 100px;
     }
 }

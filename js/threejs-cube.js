@@ -20,13 +20,15 @@ function init() {
         alpha: true,
         powerPreference: "high-performance"
     });
-    renderer.setSize(400, 400);
+    renderer.setSize(500, 500);
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
 
     const container = document.getElementById('threejs-cube');
     container.innerHTML = '';
-    container.appendChild(renderer.domElement);
+    const canvas = renderer.domElement;
+    canvas.setAttribute('data-engine', 'three.js r157');
+    container.appendChild(canvas);
 
     // Chargement de la texture
     const texture = textureLoader.load('../assets/img/qrCV.png', () => {
