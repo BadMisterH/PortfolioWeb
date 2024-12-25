@@ -81,6 +81,7 @@ body::after {
     z-index: -1;
 }
 
+
 .radar-circles {
     position: fixed;
     top: 50%;
@@ -589,6 +590,12 @@ header {
     .logo {
         display: none;
     }
+
+    .timeline-header h3{
+        font-size: 18px !important;
+        letter-spacing: 1px !important;
+    }
+    
 
     #threejs-cube canvas{
         margin-top: 80px !important;

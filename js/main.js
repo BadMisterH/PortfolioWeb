@@ -599,7 +599,7 @@ function initializeProjectCarousel() {
         });
         
         // Start autoplay
-        startAutoplay();
+        // startAutoplay();
         
         // Check for deep linking
         const hash = window.location.hash;
@@ -717,7 +717,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Start autoplay initially
-    startAutoplay();
+    // startAutoplay();
 
     // Pause autoplay on hover
     carousel.addEventListener('mouseenter', stopAutoplay);
