@@ -738,7 +738,7 @@ document.addEventListener('click', (e) => {
 
     // Jouer le son du radar
     const radarSound = document.getElementById('radarSound');
-    if (radarSound) {
+    if (radarSound == 1) {
         radarSound.currentTime = 0; // Réinitialiser le son s'il est déjà en cours
         radarSound.play().catch(error => {
             console.log('Erreur lors de la lecture du son:', error);
