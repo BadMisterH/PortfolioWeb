@@ -728,6 +728,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Radar Wave Effect with Sound
+let hasPlayedSound = false;
+
 document.addEventListener('click', (e) => {
     // Créer l'effet d'onde
     const wave = document.createElement('div');
@@ -736,13 +738,14 @@ document.addEventListener('click', (e) => {
     wave.style.top = `${e.clientY}px`;
     document.body.appendChild(wave);
 
-    // Jouer le son du radar
+    // Jouer le son du radar uniquement la première fois
     const radarSound = document.getElementById('radarSound');
-    if (radarSound == 1) {
-        radarSound.currentTime = 0; // Réinitialiser le son s'il est déjà en cours
+    if (radarSound && !hasPlayedSound) {
+        radarSound.currentTime = 0;
         radarSound.play().catch(error => {
             console.log('Erreur lors de la lecture du son:', error);
         });
+        hasPlayedSound = true; // Marquer le son comme joué
     }
 
     // Supprimer l'élément une fois l'animation terminée
