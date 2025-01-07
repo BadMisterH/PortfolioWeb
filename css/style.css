@@ -1267,6 +1267,8 @@ header {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 1rem;
 }
 
 .tech-tag {
@@ -1348,8 +1350,9 @@ header {
 }
 
 .carousel-button:hover {
-    background: rgba(0, 255, 157, 0.1);
-    box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+    background: var(--neon-green);
+    color: var(--dark-bg);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .carousel-button.prev {
@@ -2318,12 +2321,11 @@ header {
 .timeline-dot {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) rotate(45deg);
     min-width: 24px;
     height: 24px;
-    background: var(--background-dark);
+    background: var(--dark-bg);
     border: 2px solid var(--neon-green);
-    border-radius: 50%;
     margin-top: 20px;
     z-index: 2;
 }
@@ -2331,10 +2333,9 @@ header {
 .radar-ping {
     position: absolute;
     inset: -8px;
-    border-radius: 50%;
     border: 2px solid var(--neon-green);
     opacity: 0;
-    animation: ping 2s ease-out infinite;
+    animation: diamondPing 2s ease-out infinite;
 }
 
 .timeline-content {
@@ -3266,7 +3267,7 @@ header {
 /* Grands écrans */
 @media (min-width: 1200px) {
     .project-card {
-        flex: 0 0 calc(60% - 2rem);
+        flex: 0 0 calc(60% - 2.5rem);
     }
 
     .project-image {
