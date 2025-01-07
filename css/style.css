@@ -12,12 +12,6 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'Cyber';
-    src: url('../fonts/Cyberpunk is not dead.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 

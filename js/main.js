@@ -331,287 +331,73 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Initialize animations when page loads
 document.addEventListener('DOMContentLoaded', () => {
-    animateSkillPoints();
-});
-
-// Add responsive navigation for mobile
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
+    // Suppression de l'appel à animateSkillPoints qui n'existe pas
+    initializeProjectCarousel();
+    initRadarScanner();
 });
 
 // Enhanced Project Carousel with Advanced Navigation
 function initializeProjectCarousel() {
     const carousel = document.querySelector('.carousel-container');
+    if (!carousel) return; // Protection si l'élément n'existe pas
+
     const track = document.querySelector('.carousel-track');
+    if (!track) return; // Protection si l'élément n'existe pas
+
     const cards = document.querySelectorAll('.project-card');
     const dotsContainer = document.querySelector('.carousel-dots');
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
     
     let currentIndex = 0;
     let startX;
     let currentX;
     let isDragging = false;
     let autoplayInterval;
-    let progressBar;
     
-    // Create progress bar
+    // Create progress bar with null check
     function createProgressBar() {
-        progressBar = document.createElement('div');
+        if (!carousel) return; // Protection supplémentaire
+        const progressContainer = document.querySelector('.carousel-progress-container');
+        if (!progressContainer) return;
+        
+        const progressBar = document.createElement('div');
         progressBar.className = 'carousel-progress';
-        carousel.appendChild(progressBar);
+        progressContainer.appendChild(progressBar);
     }
 
-    // Update progress bar
-    function updateProgressBar() {
-        const progress = ((currentIndex + 1) / Math.ceil(cards.length / getItemsPerView())) * 100;
-        progressBar.style.width = `${progress}%`;
-    }
-
-    // Calculate items per view based on screen width
-    function getItemsPerView() {
-        if (window.innerWidth <= 768) return 1;
-        if (window.innerWidth <= 1200) return 1;
-        return 2;
-    }
-
-    // Initialize navigation
-    function initializeNavigation() {
-        // Clear existing dots
-        dotsContainer.innerHTML = '';
-        
-        // Create dots with previews
-        const numDots = Math.ceil(cards.length / getItemsPerView());
-        for (let i = 0; i < numDots; i++) {
-            const dot = document.createElement('div');
-            dot.className = 'dot-container';
-            
-            const dotButton = document.createElement('button');
-            dotButton.className = 'dot';
-            dotButton.addEventListener('click', () => goToSlide(i));
-            
-            const preview = document.createElement('div');
-            preview.className = 'dot-preview';
-            const previewContent = document.createElement('div');
-            previewContent.className = 'preview-content';
-            
-            // Get the corresponding card's content
-            const cardIndex = i * getItemsPerView();
-            if (cards[cardIndex]) {
-                const title = cards[cardIndex].querySelector('h3').textContent;
-                const image = cards[cardIndex].querySelector('img').src;
-                
-                previewContent.innerHTML = `
-                    <img src="${image}" alt="${title}">
-                    <span>${title}</span>
-                `;
-            }
-            
-            preview.appendChild(previewContent);
-            dot.appendChild(dotButton);
-            dot.appendChild(preview);
-            dotsContainer.appendChild(dot);
-        }
-        
-        updateDots();
-    }
-
-    // Update dots state
-    function updateDots() {
-        const dots = document.querySelectorAll('.dot');
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
-        updateProgressBar();
-    }
-
-    // Slide animation with easing
-    function animateSlide(from, to, duration = 500) {
-        const start = performance.now();
-        const itemsPerView = getItemsPerView();
-        
-        function update(currentTime) {
-            const elapsed = currentTime - start;
-            const progress = Math.min(elapsed / duration, 1);
-            
-            // Easing function (easeOutCubic)
-            const easeProgress = 1 - Math.pow(1 - progress, 3);
-            
-            const currentOffset = from + (to - from) * easeProgress;
-            track.style.transform = `translateX(${currentOffset}%)`;
-            
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            }
-        }
-        
-        requestAnimationFrame(update);
-    }
-
-    // Go to specific slide
-    function goToSlide(index) {
-        const slides = document.querySelectorAll('.carousel-slide');
-        slides.forEach((slide, i) => {
-            slide.classList.remove('active', 'slide-in', 'slide-out');
-            if (i === index) {
-                slide.classList.add('active', 'slide-in');
-            } else if (i === currentIndex) {
-                slide.classList.add('slide-out');
+    // Initialize touch events
+    if (track) {
+        track.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+            if (typeof stopAutoScroll === 'function') {
+                stopAutoScroll();
             }
         });
-        const itemsPerView = getItemsPerView();
-        const maxIndex = Math.ceil(cards.length / itemsPerView) - 1;
-        currentIndex = Math.max(0, Math.min(index, maxIndex));
-        
-        const currentOffset = -(currentIndex * (100 / itemsPerView));
-        const previousOffset = -(index * (100 / itemsPerView));
-        
-        animateSlide(previousOffset, currentOffset);
-        updateDots();
-        resetAutoplay();
-        
-        // Update URL hash for deep linking
-        window.location.hash = `project-${currentIndex + 1}`;
-    }
 
-    // Handle keyboard navigation
-    function handleKeyboardNav(e) {
-        if (e.key === 'ArrowLeft') {
-            prevSlide();
-        } else if (e.key === 'ArrowRight') {
-            nextSlide();
-        }
-    }
-
-    // Next slide with animation
-    function nextSlide() {
-        const itemsPerView = getItemsPerView();
-        const maxIndex = Math.ceil(cards.length / itemsPerView) - 1;
-        currentIndex = currentIndex === maxIndex ? 0 : currentIndex + 1;
-        goToSlide(currentIndex);
-    }
-
-    // Previous slide with animation
-    function prevSlide() {
-        const itemsPerView = getItemsPerView();
-        const maxIndex = Math.ceil(cards.length / itemsPerView) - 1;
-        currentIndex = currentIndex === 0 ? maxIndex : currentIndex - 1;
-        goToSlide(currentIndex);
-    }
-
-    // Touch and mouse events
-    function startDrag(e) {
-        isDragging = true;
-        startX = e.type === 'mousedown' ? e.pageX : e.touches[0].pageX;
-        currentX = startX;
-        
-        track.style.transition = 'none';
-        
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('touchmove', drag);
-        document.addEventListener('mouseup', endDrag);
-        document.addEventListener('touchend', endDrag);
-    }
-
-    function drag(e) {
-        if (!isDragging) return;
-        
-        e.preventDefault();
-        currentX = e.type === 'mousemove' ? e.pageX : e.touches[0].pageX;
-        const diff = currentX - startX;
-        const itemsPerView = getItemsPerView();
-        const slideWidth = carousel.offsetWidth / itemsPerView;
-        const maxOffset = -(Math.ceil(cards.length / itemsPerView) - 1) * slideWidth;
-        
-        let newX = -(currentIndex * slideWidth) + diff;
-        newX = Math.max(maxOffset, Math.min(0, newX));
-        
-        track.style.transform = `translateX(${(newX / carousel.offsetWidth) * 100}%)`;
-    }
-
-    function endDrag() {
-        if (!isDragging) return;
-        
-        isDragging = false;
-        const diff = currentX - startX;
-        const threshold = carousel.offsetWidth * 0.2;
-        
-        if (Math.abs(diff) > threshold) {
-            if (diff > 0 && currentIndex < maxIndex) {
-                goToSlide(currentIndex + 1);
-            } else if (diff < 0 && currentIndex > 0) {
-                goToSlide(currentIndex - 1);
+        track.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (typeof handleSwipe === 'function') {
+                handleSwipe();
             }
-        } else {
-            goToSlide(currentIndex);
-        }
-        
-        document.removeEventListener('mousemove', drag);
-        document.removeEventListener('touchmove', drag);
-        document.removeEventListener('mouseup', endDrag);
-        document.removeEventListener('touchend', endDrag);
-    }
-
-    // Autoplay functionality
-    function startAutoplay() {
-        stopAutoplay();
-        autoplayInterval = setInterval(nextSlide, 5000);
-    }
-
-    function stopAutoplay() {
-        if (autoplayInterval) {
-            clearInterval(autoplayInterval);
-            autoplayInterval = null;
-        }
-    }
-
-    function resetAutoplay() {
-        stopAutoplay();
-        startAutoplay();
-    }
-
-    // Initialize everything
-    function initialize() {
-        createProgressBar();
-        initializeNavigation();
-        
-        // Event listeners
-        prevButton.addEventListener('click', prevSlide);
-        nextButton.addEventListener('click', nextSlide);
-        carousel.addEventListener('mousedown', startDrag);
-        carousel.addEventListener('touchstart', startDrag);
-        document.addEventListener('keydown', handleKeyboardNav);
-        
-        // Pause autoplay on hover
-        carousel.addEventListener('mouseenter', stopAutoplay);
-        carousel.addEventListener('mouseleave', startAutoplay);
-        
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            initializeNavigation();
-            goToSlide(currentIndex);
+            if (typeof startAutoScroll === 'function') {
+                startAutoScroll();
+            }
         });
-        
-        // Start autoplay
-        // startAutoplay();
-        
-        // Check for deep linking
-        const hash = window.location.hash;
-        if (hash.startsWith('#project-')) {
-            const index = parseInt(hash.replace('#project-', '')) - 1;
-            if (!isNaN(index) && index >= 0 && index < cards.length) {
-                goToSlide(index);
-            }
-        }
     }
+}
 
-    initialize();
+// Radar Scanner Animation with protection
+function initRadarScanner() {
+    const scanner = document.querySelector('.radar-scanner');
+    if (!scanner) return; // Protection si l'élément n'existe pas
+
+    let rotation = 0;
+    function animate() {
+        if (!scanner) return; // Protection supplémentaire
+        rotation = (rotation + 1) % 360;
+        scanner.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+        requestAnimationFrame(animate);
+    }
+    animate();
 }
 
 // Initialize carousel when DOM is loaded
@@ -725,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial setup
     updateCarousel();
-});
+})
 
 // Radar Wave Effect with Sound
 let hasPlayedSound = false;
@@ -743,34 +529,15 @@ document.addEventListener('click', (e) => {
     if (radarSound && !hasPlayedSound) {
         radarSound.currentTime = 0;
         radarSound.play().catch(error => {
-            console.log('Erreur lors de la lecture du son:', error);
+            console.warn('Unable to play radar sound:', error);
         });
-        hasPlayedSound = true; // Marquer le son comme joué
+        hasPlayedSound = true;
     }
 
     // Supprimer l'élément une fois l'animation terminée
     wave.addEventListener('animationend', () => {
         wave.remove();
     });
-});
-
-// Radar Scanner Animation
-function initRadarScanner() {
-    const scanner = document.querySelector('.radar-scanner');
-    let rotation = 0;
-
-    function animate() {
-        rotation = (rotation + 1) % 360;
-        scanner.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-}
-
-// Initialize animations when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    initRadarScanner();
 });
 
 // Skills animation on scroll
@@ -793,32 +560,45 @@ const skillsObserver = new IntersectionObserver((entries) => {
 skillBars.forEach(bar => skillsObserver.observe(bar));
 
 // Touch events for carousel
-let touchStartX = 0;
-let touchEndX = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    if (!track) return;
 
-track?.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-    stopAutoScroll();
-});
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let currentIndex = 0;
+    const maxIndex = document.querySelectorAll('.project-card').length - 1;
 
-track?.addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-    startAutoScroll();
-});
+    track.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
 
-function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
+    track.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
 
-    if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0 && currentIndex < maxIndex) {
-            goToSlide(currentIndex + 1);
-        } else if (diff < 0 && currentIndex > 0) {
-            goToSlide(currentIndex - 1);
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0 && currentIndex < maxIndex) {
+                currentIndex++;
+                updateCarousel();
+            } else if (diff < 0 && currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
         }
     }
-}
+
+    function updateCarousel() {
+        if (!track) return;
+        const offset = -currentIndex * 100;
+        track.style.transform = `translateX(${offset}%)`;
+    }
+});
 
 // Page ripple effect
 document.addEventListener('click', (e) => {

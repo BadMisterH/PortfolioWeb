@@ -1,97 +1,106 @@
-// Initialize Swiper
+// Initialize Swiper with protection
 document.addEventListener('DOMContentLoaded', () => {
-    const swiper = new Swiper('.project-swiper', {
-        // Paramètres généraux
-        slidesPerView: 1,
-        spaceBetween: 20,
-        grabCursor: true,
-        
-        // Configuration responsive
-        breakpoints: {
-            // Mobile
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 15,
-                loop: true
+    if (typeof Swiper === 'undefined') {
+        console.warn('Swiper is not loaded. Make sure to include Swiper JS before this script.');
+        return;
+    }
+    
+    try {
+        const swiper = new Swiper('.project-swiper', {
+            // Paramètres généraux
+            slidesPerView: 1,
+            spaceBetween: 20,
+            grabCursor: true,
+            
+            // Configuration responsive
+            breakpoints: {
+                // Mobile
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                    loop: true
+                },
+                // Tablet
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    loop: false
+                },
+                // Desktop
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                    loop: false
+                },
+                // Large Desktop
+                1440: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                    loop: false
+                }
             },
-            // Tablet
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-                loop: false
+
+            // Activer l'autoplay sur mobile uniquement
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: true,
+                pauseOnMouseEnter: true
             },
-            // Desktop
-            1024: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-                loop: false
+
+            // Contrôle du clavier
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true,
             },
-            // Large Desktop
-            1440: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-                loop: false
-            }
-        },
 
-        // Activer l'autoplay sur mobile uniquement
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: true,
-            pauseOnMouseEnter: true
-        },
+            // Pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
 
-        // Contrôle du clavier
-        keyboard: {
-            enabled: true,
-            onlyInViewport: true,
-        },
+            // Boutons de navigation
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
 
-        // Pagination
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            dynamicBullets: true,
-        },
+            // Accessibilité
+            a11y: {
+                prevSlideMessage: 'Projet précédent',
+                nextSlideMessage: 'Projet suivant',
+                firstSlideMessage: 'Ceci est le premier projet',
+                lastSlideMessage: 'Ceci est le dernier projet',
+                paginationBulletMessage: 'Aller au projet {{index}}'
+            },
 
-        // Boutons de navigation
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+            // Optimisations de performance
+            preloadImages: true,
+            updateOnWindowResize: true,
+            resizeObserver: true,
 
-        // Accessibilité
-        a11y: {
-            prevSlideMessage: 'Projet précédent',
-            nextSlideMessage: 'Projet suivant',
-            firstSlideMessage: 'Ceci est le premier projet',
-            lastSlideMessage: 'Ceci est le dernier projet',
-            paginationBulletMessage: 'Aller au projet {{index}}'
-        },
-
-        // Optimisations de performance
-        preloadImages: true,
-        updateOnWindowResize: true,
-        resizeObserver: true,
-
-        // Gestion du touch
-        touchRatio: 1.5,
-        touchAngle: 45,
-        touchMoveStopPropagation: false,
-        
-        // Effet de transition
-        effect: 'slide',
-        speed: 400,
-    });
-
-    // Pause l'autoplay quand la vidéo est en cours de lecture
-    const videos = document.querySelectorAll('.project-image video');
-    videos.forEach(video => {
-        video.addEventListener('play', () => {
-            swiper.autoplay.stop();
+            // Gestion du touch
+            touchRatio: 1.5,
+            touchAngle: 45,
+            touchMoveStopPropagation: false,
+            
+            // Effet de transition
+            effect: 'slide',
+            speed: 400,
         });
-        video.addEventListener('pause', () => {
-            swiper.autoplay.start();
+
+        // Pause l'autoplay quand la vidéo est en cours de lecture
+        const videos = document.querySelectorAll('.project-image video');
+        videos.forEach(video => {
+            video.addEventListener('play', () => {
+                swiper.autoplay.stop();
+            });
+            video.addEventListener('pause', () => {
+                swiper.autoplay.start();
+            });
         });
-    });
+    } catch (error) {
+        console.warn('Error initializing Swiper:', error);
+    }
 });
