@@ -2316,7 +2316,9 @@ header {
 }
 
 .timeline-dot {
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     min-width: 24px;
     height: 24px;
     background: var(--background-dark);
