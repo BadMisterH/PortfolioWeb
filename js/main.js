@@ -311,23 +311,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Add glitch effect on hover for profile image
-const profileContainer = document.querySelector('.profile-container');
+// const profileContainer = document.querySelector('.profile-container');
 
-profileContainer?.addEventListener('mouseenter', () => {
-    profileContainer.style.animation = 'glitch 0.5s infinite';
-});
+// profileContainer?.addEventListener('mouseenter', () => {
+//     profileContainer.style.animation = 'glitch 0.5s infinite';
+// });
 
-profileContainer?.addEventListener('mouseleave', () => {
-    profileContainer.style.animation = 'none';
-});
+// profileContainer?.addEventListener('mouseleave', () => {
+//     profileContainer.style.animation = 'none';
+// });
 
-// Dynamic skill point animations
-function animateSkillPoints() {
-    skillPoints.forEach((point, index) => {
-        const delay = index * 0.2;
-        point.style.animation = `fadeIn 0.5s ${delay}s forwards`;
-    });
-}
+// // Dynamic skill point animations
+// function animateSkillPoints() {
+//     skillPoints.forEach((point, index) => {
+//         const delay = index * 0.2;
+//         point.style.animation = `fadeIn 0.5s ${delay}s forwards`;
+//     });
+// }
 
 // Initialize animations when page loads
 document.addEventListener('DOMContentLoaded', () => {
