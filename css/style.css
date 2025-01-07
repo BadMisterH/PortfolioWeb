@@ -2293,22 +2293,7 @@ header {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
     position: relative;
-}
-
-.timeline-item::after {
-    content: '🔊';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.2em;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.timeline-item:hover::after {
-    opacity: 0.7;
 }
 
 .timeline-item.visible {
@@ -2359,6 +2344,7 @@ header {
     overflow: hidden;
     font-family: 'Share Tech Mono', monospace;
     letter-spacing: 1px;
+    cursor: pointer;
 }
 
 .timeline-content::before {
