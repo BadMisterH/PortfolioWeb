@@ -866,23 +866,23 @@ header {
 
 .skill-item {
     position: relative;
-    padding: 1rem;
+    padding: 1.2rem;
     background: rgba(0, 26, 15, 0.6);
     border: 1px solid rgba(0, 255, 157, 0.2);
-    border-radius: 10px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.3s ease;
 }
 
 .skill-item:hover {
-    background: rgba(0, 26, 15, 0.8);
+    background: rgba(0, 26, 15, 0.7);
     border-color: var(--neon-green);
-    box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
-    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.15);
+    transform: translateY(-3px);
 }
 
 .skill-item.visible {
@@ -893,38 +893,53 @@ header {
 .skill-item i {
     font-size: 2rem;
     color: var(--neon-green);
-    text-shadow: 0 0 10px var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
 }
 
 .skill-icon {
     font-family: 'Cyber', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--neon-green);
-    text-shadow: 0 0 10px var(--neon-green);
-    background: rgba(0, 255, 157, 0.1);
-    padding: 0.5rem;
-    border-radius: 8px;
-    min-width: 2.5rem;
+    text-shadow: 0 0 5px var(--neon-green);
+    background: rgba(0, 255, 157, 0.05);
+    padding: 0.6rem;
+    border-radius: 6px;
+    min-width: 2.8rem;
     text-align: center;
+    border: 1px solid rgba(0, 255, 157, 0.2);
 }
 
 .skill-name {
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .creative-title {
-    margin-top: 4rem;
-    font-size: 2.5rem;
+    margin-top: 3rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
     color: var(--neon-green);
     text-shadow: 0 0 10px var(--neon-green);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.creative-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 1rem;
+    width: 100px;
+    height: 2px;
+    background: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
 }
 
 .creative-title.visible {
@@ -933,13 +948,14 @@ header {
 }
 
 @media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .creative-title {
+        font-size: 1.5rem;
+        margin-top: 2rem;
     }
-    
+
     .skill-item {
-        padding: 0.8rem;
+        padding: 1rem;
+        gap: 1rem;
     }
     
     .skill-item i,
@@ -949,11 +965,6 @@ header {
     
     .skill-name {
         font-size: 1rem;
-    }
-    
-    .creative-title {
-        font-size: 2rem;
-        margin-top: 3rem;
     }
 }
 
@@ -1103,6 +1114,7 @@ header {
 .skill-category:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 20px rgba(0, 255, 157, 0.2);
+    border-color: var(--neon-green);
 }
 
 .skill-category h3 {
@@ -1995,7 +2007,8 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg,
+    background: linear-gradient(
+        45deg,
         transparent 0%,
         rgba(0, 255, 157, 0.1) 50%,
         transparent 100%
@@ -3747,15 +3760,29 @@ button,
 }
 
 .creative-title {
-    margin-top: 4rem;
-    font-size: 2.5rem;
+    margin-top: 3rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
     color: var(--neon-green);
     text-shadow: 0 0 10px var(--neon-green);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.creative-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 1rem;
+    width: 100px;
+    height: 2px;
+    background: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
 }
 
 .creative-title.visible {
@@ -3764,16 +3791,8 @@ button,
 }
 
 @media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .skill-item {
-        padding-bottom: 1rem;
-    }
-    
     .creative-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        margin-top: 2rem;
     }
 }
