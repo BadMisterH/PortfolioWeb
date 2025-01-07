@@ -18,9 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(item);
     });
 
-    // Observe creative title
+    // Observe creative title and all h3 titles in competences section
     const creativeTitle = document.querySelector('.creative-title');
     if (creativeTitle) {
         observer.observe(creativeTitle);
     }
+
+    // Observe all h3 titles in competences section
+    document.querySelectorAll('.competences h3').forEach(title => {
+        observer.observe(title);
+    });
 });

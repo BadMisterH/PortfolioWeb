@@ -268,3 +268,15 @@ header {
         transform: translateX(0);
     }
 }
+
+/* Animation pour les titres h3 de la section compétences */
+.competences h3 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.competences h3.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
