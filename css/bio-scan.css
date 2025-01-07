@@ -1,0 +1,197 @@
+.bio-scan-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    border: 2px solid var(--neon-green);
+}
+
+.scan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.scan-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--neon-green) 50%, 
+        transparent 100%);
+    animation: scanAnimation 3s ease-in-out infinite;
+    box-shadow: 0 0 15px var(--neon-green);
+    opacity: 0.7;
+}
+
+.bio-data {
+    position: absolute;
+    font-family: 'Cyber', monospace;
+    color: var(--neon-green);
+    font-size: 12px;
+    text-shadow: 0 0 5px var(--neon-green);
+    pointer-events: none;
+    opacity: 0;
+    animation: dataFade 4s infinite;
+}
+
+.data-top-left {
+    top: 20%;
+    left: -120px;
+    transform: rotate(-45deg);
+}
+
+.data-top-right {
+    top: 20%;
+    right: -120px;
+    transform: rotate(45deg);
+}
+
+.data-bottom-left {
+    bottom: 20%;
+    left: -120px;
+    transform: rotate(45deg);
+}
+
+.data-bottom-right {
+    bottom: 20%;
+    right: -120px;
+    transform: rotate(-45deg);
+}
+
+.scan-circle {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 1px solid var(--neon-green);
+    border-radius: 50%;
+    animation: pulseCircle 2s infinite;
+}
+
+.target-marks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.target-mark {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--neon-green);
+    opacity: 0.7;
+}
+
+.mark-tl {
+    top: -10px;
+    left: -10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.mark-tr {
+    top: -10px;
+    right: -10px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.mark-bl {
+    bottom: -10px;
+    left: -10px;
+    border-right: none;
+    border-top: none;
+}
+
+.mark-br {
+    bottom: -10px;
+    right: -10px;
+    border-left: none;
+    border-top: none;
+}
+
+@keyframes scanAnimation {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.7;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes dataFade {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes pulseCircle {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+}
+
+.bio-scan-container::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border: 1px solid var(--neon-green);
+    border-radius: 50%;
+    animation: outerPulse 3s infinite;
+    opacity: 0.3;
+}
+
+@keyframes outerPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+}
