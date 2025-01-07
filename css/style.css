@@ -19,13 +19,15 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 html {
     width: 100%;
     overflow-x: hidden;
 }
 
 body {
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     background: var(--dark-bg);
     color: var(--text-color);
     line-height: 1.6;
@@ -175,7 +177,7 @@ header {
     padding: 0.5rem 1rem;
     border-radius: 8px;
     transition: all 0.3s ease;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -236,7 +238,7 @@ header {
     font-size: 0.8rem;
     color: var(--neon-green);
     letter-spacing: 2px;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
 }
 
@@ -263,7 +265,7 @@ header {
     font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 2rem;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     letter-spacing: 1px;
 }
 
@@ -458,7 +460,7 @@ header {
 }
 
 .font-contact{
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
 }
 
 .point-label {
@@ -470,7 +472,7 @@ header {
     padding: 4px 8px;
     border-radius: 4px;
     border: 1px solid rgba(0, 255, 157, 0.3);
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -820,6 +822,7 @@ header {
 }
 
 .section-title {
+    font-family: 'Cyber', 'Share Tech Mono', monospace;
     font-size: 2.5rem;
     color: var(--neon-green);
     margin-bottom: 3rem;
@@ -828,7 +831,6 @@ header {
     letter-spacing: 3px;
     position: relative;
     text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
-    font-family: 'Cyber', sans-serif;
 }
 
 .section-title::after {
@@ -1058,7 +1060,7 @@ header {
     border: 1px solid rgba(0, 255, 157, 0.3);
     white-space: nowrap;
     transition: all 0.3s ease;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1110,7 +1112,7 @@ header {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1134,7 +1136,7 @@ header {
     justify-content: center;
     width: 3rem;
     height: 3rem;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1162,7 +1164,7 @@ header {
     justify-content: center;
     width: 2rem;
     height: 2rem;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1278,7 +1280,7 @@ header {
     border-radius: 4px;
     font-size: 0.8rem;
     border: 1px solid rgba(0, 255, 157, 0.3);
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1291,7 +1293,7 @@ header {
     color: var(--neon-green);
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1301,7 +1303,7 @@ header {
     margin-bottom: 1rem;
     font-size: 0.9rem;
     opacity: 0.8;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     letter-spacing: 1px;
 }
 
@@ -1321,7 +1323,7 @@ header {
     border-radius: 4px;
     transition: all 0.3s ease;
     font-size: 0.9rem;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1474,7 +1476,7 @@ header {
     font-size: 0.9rem;
     border: 1px solid var(--neon-green);
     transition: all 0.3s ease;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1497,7 +1499,7 @@ header {
     margin-bottom: 1.2rem;
     font-size: 1.8rem;
     text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1508,7 +1510,7 @@ header {
     line-height: 1.8;
     font-size: 1.1rem;
     flex-grow: 1;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     letter-spacing: 1px;
 }
 
@@ -1531,7 +1533,7 @@ header {
     background: rgba(0, 255, 157, 0.1);
     transition: all 0.3s ease;
     font-size: 1.1rem;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1710,7 +1712,7 @@ header {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1876,7 +1878,7 @@ header {
     white-space: nowrap;
     text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
     transition: all 0.3s ease;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1896,7 +1898,7 @@ header {
     transition: all 0.3s ease;
     white-space: nowrap;
     box-shadow: 0 0 15px rgba(0, 255, 157, 0.2);
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -2014,7 +2016,7 @@ header {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
 }
 
 .skill-tags {
@@ -2034,7 +2036,7 @@ header {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -2349,7 +2351,7 @@ header {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     letter-spacing: 1px;
 }
 
@@ -2390,7 +2392,7 @@ header {
     border-radius: 20px;
     font-size: 0.9em;
     color: var(--neon-green);
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -2399,7 +2401,7 @@ header {
     color: var(--neon-green);
     font-size: 1.5em;
     margin: 10px 0;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -2409,7 +2411,7 @@ header {
     color: #fff;
     font-size: 1.1em;
     opacity: 0.9;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     letter-spacing: 1px;
 }
 
@@ -2424,7 +2426,7 @@ header {
     margin-bottom: 12px;
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.5;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     letter-spacing: 1px;
 }
 
@@ -2452,7 +2454,7 @@ header {
     color: var(--neon-green);
     font-size: 0.85em;
     transition: all 0.3s ease;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -2653,7 +2655,7 @@ header {
 
 .card-header h3 {
     color: var(--neon-green);
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -2750,7 +2752,7 @@ header {
     visibility: hidden;
     transition: all 0.3s ease;
     white-space: nowrap;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     border: 1px solid var(--neon-green);
 }
 
@@ -3164,7 +3166,7 @@ header {
 .project-content h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -3173,7 +3175,7 @@ header {
     font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     letter-spacing: 1px;
 }
 
@@ -3187,7 +3189,7 @@ header {
 .tech-tag {
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -3491,43 +3493,6 @@ section {
     }
 }
 
-@media (max-width: 576px) {
-    section {
-        padding: 2.5rem 0;
-    }
-
-    .carousel-container {
-        padding: 1.5rem 0.8rem;
-    }
-
-    .carousel-track {
-        gap: 1.2rem;
-    }
-
-    .project-content {
-        padding: 1rem;
-    }
-
-    .project-tech {
-        gap: 0.5rem;
-        margin-top: 1rem;
-    }
-
-    .skills-container {
-        padding: 1.5rem 0.8rem;
-        gap: 1.2rem;
-    }
-
-    .skills-grid {
-        gap: 1.2rem;
-        margin: 1.2rem 0;
-    }
-
-    .contact-grid {
-        gap: 1.5rem;
-    }
-}
-
 /* Style des boutons UI */
 .contact-info {
     display: flex;
@@ -3551,7 +3516,7 @@ section {
     overflow: hidden;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: 'Cyber', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
 }
 
 .ui-button::before {
