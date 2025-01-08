@@ -76,7 +76,7 @@
     margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
     /* Limiter le texte à 3 lignes */
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    /* -webkit-line-clamp: 3; */
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
