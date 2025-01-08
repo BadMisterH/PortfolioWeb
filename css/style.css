@@ -687,7 +687,7 @@ header {
 .section-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 6rem 2rem;
+  /* padding: 6rem 2rem; */
 }
 .section-title {
   font-family: "Cyber", "Share Tech Mono", monospace;
@@ -712,7 +712,7 @@ header {
   box-shadow: 0 0 10px var(--neon-green);
 }
 .competences {
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
   background: rgb(0 26 15 / 0.3);
 }
 .skills-grid {
@@ -1856,7 +1856,7 @@ header {
   width: 100%;
 }
 .competences {
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
   background: rgb(0 26 15 / 0.3);
 }
 .skills-container {
@@ -2879,7 +2879,7 @@ header {
   }
 }
 section {
-  padding: 6rem 0;
+  /* padding: 6rem 0; */
   margin-bottom: 2rem;
 }
 .carousel-container {
@@ -2909,9 +2909,9 @@ section {
   gap: 2.5rem;
   margin: 3rem 0;
 }
-.contact-section {
+/* .contact-section {
   padding: 6rem 2rem;
-}
+} */
 .contact-grid {
   gap: 4rem;
   margin-top: 3rem;
