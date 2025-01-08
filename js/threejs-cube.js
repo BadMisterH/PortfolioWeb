@@ -35,7 +35,6 @@ function init() {
 
     // Chargement de la texture
     const texture = textureLoader.load('../assets/img/qrCV.png', () => {
-        console.log('Texture chargée avec succès.');
 
         const geometry = new THREE.BoxGeometry(2, 2, 2);
         
