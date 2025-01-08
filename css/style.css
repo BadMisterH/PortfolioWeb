@@ -2986,6 +2986,7 @@ section {
   .skills-grid {
     gap: 1.5rem;
     margin: 1.5rem 0;
+    grid-template-columns: repeat(1, 1fr);
   }
   .contact-grid {
     gap: 2rem;
