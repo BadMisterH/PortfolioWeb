@@ -2236,14 +2236,7 @@ header {
   background: linear-gradient(0deg, rgb(0 26 15 / 0.8) 0%, transparent 100%);
   padding: 6rem 0;
 }
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  padding: 2rem;
-  margin-top: 3rem;
-}
+
 .contact-info-card {
   background: rgb(0 20 12 / 0.8);
   border: 2px solid var(--neon-green);
