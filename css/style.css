@@ -3156,12 +3156,7 @@ button,
       16 16,
     pointer;
 }
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
-  margin: 2rem 0;
-}
+
 .skills-column {
   display: flex;
   flex-direction: column;
