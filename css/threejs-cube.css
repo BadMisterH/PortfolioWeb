@@ -45,14 +45,14 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     #threejs-cube {
         width: 400px;
         height: 400px;
     }
 
     .contact-grid {
-        padding: 3em;
+        padding: 3em !important;
     }
 }
 
