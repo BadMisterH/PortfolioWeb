@@ -1,663 +1,805 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KHAZZANI Badr - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="/assets/img/Logo.png" type="image/png">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/threejs-cube.css">
-    <link rel="stylesheet" href="css/carousel.css">
-    <meta name="description" content="Portfolio de KHAZZANI Badr | Développeur Full Stack créatif spécialisé dans le développement web moderne et les interfaces innovantes. Explorez mes projets et compétences techniques.">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="/assets/img/Logo.png" type="image/png" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/threejs-cube.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
+    <link rel="stylesheet" href="./css/projects.css" />
+    <script src="./js/project.js"></script>
+    <meta
+      name="description"
+      content="Portfolio de KHAZZANI Badr | Développeur Full Stack créatif spécialisé dans le développement web moderne et les interfaces innovantes. Explorez mes projets et compétences techniques."
+    />
     <script type="module" src="js/threejs-cube.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-</head>
-<body>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="ripple-container"></div>
     <div class="noise"></div>
     <div class="grid-overlay"></div>
     <audio id="radarSound" preload="auto">
-        <source src="assets/sounds/radar-beep.mp3" type="audio/mpeg">
+      <source src="assets/sounds/radar-beep.mp3" type="audio/mpeg" />
     </audio>
 
     <header>
-        <nav class="nav-container">
-            <div class="logo">
-                <span class="logo-text">&lt;KB/&gt;</span>
-            </div>
-            <div class="nav-links">
-                <a href="#home" class="nav-link active">
-                    <i class="fas fa-home"></i>
-                    <span>Accueil</span>
-                </a>
-                <a href="#formations" class="nav-link">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>Formations</span>
-                </a>
-                <a href="#experiences" class="nav-link">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Expériences</span>
-                </a>
-                <a href="#competences" class="nav-link">
-                    <i class="fas fa-code"></i>
-                    <span>Compétences</span>
-                </a>
-                <a href="#projets" class="nav-link">
-                    <i class="fas fa-project-diagram"></i>
-                    <span>Projets</span>
-                </a>
-                <a href="#contact" class="nav-link" >
-                    <i class="fas fa-paper-plane"></i>
-                    <span>Contact</span>
-                </a>
-            </div>
-        </nav>
+      <nav class="nav-container">
+        <div class="logo">
+          <span class="logo-text">&lt;KB/&gt;</span>
+        </div>
+        <div class="nav-links">
+          <a href="#home" class="nav-link active">
+            <i class="fas fa-home"></i>
+            <span>Accueil</span>
+          </a>
+          <a href="#formations" class="nav-link">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Formations</span>
+          </a>
+          <a href="#experiences" class="nav-link">
+            <i class="fas fa-briefcase"></i>
+            <span>Expériences</span>
+          </a>
+          <a href="#competences" class="nav-link">
+            <i class="fas fa-code"></i>
+            <span>Compétences</span>
+          </a>
+          <a href="#projets" class="nav-link">
+            <i class="fas fa-project-diagram"></i>
+            <span>Projets</span>
+          </a>
+          <a href="#contact" class="nav-link">
+            <i class="fas fa-paper-plane"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="badge-card">
-                        <div class="card-header">
-                            <div class="status-light"></div>
-                            <span class="status-text">SYSTÈME ACTIF</span>
-                        </div>
-                        <h1 class="name">KHAZZANI Badr</h1>
-                        <h2 class="title">Ingénieur en Informatique et multimédia</h2>
-                        <div class="description">
-                            <p>Autonome, polyvalent et passionné par le webdesign + développement web</p>
-                            <p>Je souhaite une nouvelle opportunité de développement à la recherche d'une alternance de deux ans</p>
-                            <p>En développement front-end, je souhaite rejoindre une équipe dynamique pour mettre mes compétences au service de votre entreprise tout en continuant à développer mon savoir-faire.</p>
-                        </div>
-                        <div class="contact-info">
-                            <a href="#contact" class="ui-button contact-button">
-                                <i class="fas fa-paper-plane"></i>
-                                <span>Contact</span>
-                            </a>
-                            <a href="#projets" class="ui-button projects-button">
-                                <i class="fas fa-project-diagram"></i>
-                                <span>Projets</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="radar">
-                        <div class="radar-base">
-                            <div class="circle circle-1"></div>
-                            <div class="circle circle-2"></div>
-                            <div class="circle circle-3"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="profile-container">
-                            <img src="assets/img/BK.jpg" alt="KHAZZANI_Badr" class="profile-image" loading="lazy">
-                            <div class="profile-overlay"></div>
-                        </div>
-                        <div class="skill-points">
-                            <div class="skill-point" style="--angle: 45deg">
-                                <span class="point-label">HTML/CSS</span>
-                            </div>
-                            <div class="skill-point" style="--angle: 135deg">
-                                <span class="point-label">JS</span>
-                            </div>
-                            <div class="skill-point" style="--angle: 225deg">
-                                <span class="point-label">React</span>
-                            </div>
-                            <div class="skill-point" style="--angle: 315deg">
-                                <span class="point-label">UI/UX</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <section id="home" class="hero">
+        <div class="hero-container">
+          <div class="hero-content">
+            <div class="badge-card">
+              <div class="card-header">
+                <div class="status-light"></div>
+                <span class="status-text">SYSTÈME ACTIF</span>
+              </div>
+              <h1 class="name">KHAZZANI Badr</h1>
+              <h2 class="title">Ingénieur en Informatique et multimédia</h2>
+              <div class="description">
+                <p>
+                  Autonome, polyvalent et passionné par le webdesign +
+                  développement web
+                </p>
+                <p>
+                  Je souhaite une nouvelle opportunité de développement à la
+                  recherche d'une alternance de deux ans
+                </p>
+                <p>
+                  En développement front-end, je souhaite rejoindre une équipe
+                  dynamique pour mettre mes compétences au service de votre
+                  entreprise tout en continuant à développer mon savoir-faire.
+                </p>
+              </div>
+              <div class="contact-info">
+                <a href="#contact" class="ui-button contact-button">
+                  <i class="fas fa-paper-plane"></i>
+                  <span>Contact</span>
+                </a>
+                <a href="#projets" class="ui-button projects-button">
+                  <i class="fas fa-project-diagram"></i>
+                  <span>Projets</span>
+                </a>
+              </div>
             </div>
-        </section>
-
-        <section id="formations" class="formations">
-            <div class="section-container">
-                <h2 class="section-title">Formations</h2>
-                <div class="radar-timeline">
-                    <div class="timeline-wrapper">
-
-                        <div class="timeline-item">
-                            <div class="timeline-dot">
-                                <div class="radar-ping"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date">2019 - 2021</span>
-                                    <h3>DUT en multimédia et internet</h3>
-                                    <span class="timeline-company">IUT de Champs-sur-Marne</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <ul>
-                                        <li>Création de contenu multimédia</li>
-                                        <li>Développement web</li>
-                                        <li>Communication digitale</li>
-                                    </ul>
-                                </div>
-                                <div class="timeline-tech">
-                                    <span>Multimédia</span>
-                                    <span>Web</span>
-                                    <span>Communication</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-dot">
-                                <div class="radar-ping"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date">2021 - 2022</span>
-                                    <h3>Licence Professionnelle métiers du web</h3>
-                                    <span class="timeline-company">Université de Vélizy</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <ul>
-                                        <li>Conception et développement web</li>
-                                        <li>UX/UI Design</li>
-                                        <li>Intégration web responsive</li>
-                                    </ul>
-                                </div>
-                                <div class="timeline-tech">
-                                    <span>Web Design</span>
-                                    <span>UX/UI</span>
-                                    <span>Responsive Design</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot">
-                                <div class="radar-ping"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date">2022 - 2023</span>
-                                    <h3>Licence Pro en administration de sites web</h3>
-                                    <span class="timeline-company">Université du Havre</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <ul>
-                                        <li>Administration de serveurs web</li>
-                                        <li>Développement front-end et back-end</li>
-                                        <li>Gestion de bases de données</li>
-                                    </ul>
-                                </div>
-                                <div class="timeline-tech">
-                                    <span>Administration Web</span>
-                                    <span>Développement Full-Stack</span>
-                                    <span>SQL</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot">
-                                <div class="radar-ping"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date">2023 - 2026</span>
-                                    <h3>Ingénieur en Informatique</h3>
-                                    <span class="timeline-company">CNAM (Nouvelle-Aquitaine, Angoulême)</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <ul>
-                                        <li>Spécialisation en développement web</li>
-                                        <li>Projets en équipe et gestion de projet</li>
-                                        <li>Apprentissage des technologies modernes</li>
-                                    </ul>
-                                </div>
-                                <div class="timeline-tech">
-                                    <span>Développement Web</span>
-                                    <span>Base de données</span>
-                                    <span>Gestion de Projet</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-                    </div>
+          </div>
+          <div class="hero-visual">
+            <div class="radar">
+              <div class="radar-base">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+                <div class="line"></div>
+              </div>
+              <div class="profile-container">
+                <img
+                  src="assets/img/BK.jpg"
+                  alt="KHAZZANI_Badr"
+                  class="profile-image"
+                  loading="lazy"
+                />
+                <div class="profile-overlay"></div>
+              </div>
+              <div class="skill-points">
+                <div class="skill-point" style="--angle: 45deg">
+                  <span class="point-label">HTML/CSS</span>
                 </div>
-            </div>
-        </section>
-
-        <section id="experiences" class="experiences">
-            <div class="section-container">
-                <h2 class="section-title">Expériences</h2>
-                <div class="radar-timeline">
-                    <div class="timeline-wrapper">
-                        <div class="timeline-item">
-                            <div class="timeline-dot">
-                                <div class="radar-ping"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date">Avr 2021 - Juil 2021</span>
-                                    <h3>Développeur Front-End</h3>
-                                    <span class="timeline-company">JC Consulting, Ermont (95)</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <ul>
-                                        <li>Intégration CMS WordPress</li>
-                                        <li>Création d'un site web responsive</li>
-                                        <li>Optimisation SEO et performances</li>
-                                    </ul>
-                                </div>
-                                <div class="timeline-tech">
-                                    <span>HTML</span>
-                                    <span>CSS</span>
-                                    <span>JS</span>
-                                    <span>React</span>
-                                    <span>WordPress</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-dot">
-                                <div class="radar-ping"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date">Avr 2023 - Sept 2023</span>
-                                    <h3>Webdesigner</h3>
-                                    <span class="timeline-company">Notify AI, Paris (75)</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <ul>
-                                        <li>Création de landing pages avec Figma</li>
-                                        <li>Intégration de nouveaux sites WordPress</li>
-                                        <li>Mise en place des parcours utilisateur</li>
-                                    </ul>
-                                </div>
-                                <div class="timeline-tech">
-                                    <span>WordPress</span>
-                                    <span>Figma</span>
-                                    <span>Illustrator</span>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="timeline-item active">
-                            <div class="timeline-dot">
-                                <div class="radar-ping"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-header">
-                                    <span class="timeline-date">Déc 2023 - Fév 2024</span>
-                                    <h3>Webmaster</h3>
-                                    <span class="timeline-company">Kocosmetic, Choisy-le-Roi (94)</span>
-                                </div>
-                                <div class="timeline-body">
-                                    <ul>
-                                        <li>Création complète du site e-commerce en autonomie</li>
-                                        <li>Mise en place des parcours utilisateur et communication</li>
-                                        <li>Optimisation des routes et des temps de réponse</li>
-                                    </ul>
-                                </div>
-                                <div class="timeline-tech">
-                                    <span>PHP</span>
-                                    <span>JavaScript</span>
-                                    <span>Python</span>
-                                    <span>WordPress</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="skill-point" style="--angle: 135deg">
+                  <span class="point-label">JS</span>
                 </div>
-            </div>
-        </section>
-
-        <section id="competences" class="competences">
-            <div class="section-container">
-                <h2 class="section-title">Compétences</h2>
-
-                <h3 class="section-title creative-title">Langage de programmation</h3>
-
-                <div class="skills-grid">
-                    <div class="skills-column">
-                        <div class="skill-item scroll-reveal">
-                            <i class="fab fa-html5"></i>
-                            <span class="skill-name">HTML/CSS/SCSS</span>
-                        </div>
-                        <div class="skill-item scroll-reveal">
-                            <i class="fab fa-js"></i>
-                            <span class="skill-name">Javascript</span>
-                        </div>
-                        <div class="skill-item scroll-reveal">
-                            <i class="fab fa-react"></i>
-                            <span class="skill-name">React</span>
-                        </div>
-                        <div class="skill-item scroll-reveal">
-                            <i class="fab fa-wordpress"></i>
-                            <span class="skill-name">WordPress</span>
-                        </div>
-                        <div class="skill-item scroll-reveal">
-                            <i class="fas fa-gamepad"></i>
-                            <span class="skill-name">Unity / C#</span>
-                        </div>
-                    </div>
-                    <div class="skills-column">
-                        <div class="skill-item scroll-reveal">
-                            <i class="fab fa-python"></i>
-                            <span class="skill-name">Python</span>
-                        </div>
-                        <div class="skill-item scroll-reveal">
-                            <i class="fab fa-php"></i>
-                            <span class="skill-name">PHP</span>
-                        </div>
-                        <div class="skill-item scroll-reveal">
-                            <i class="fas fa-database"></i>
-                            <span class="skill-name">SQL</span>
-                        </div>
-                        <div class="skill-item scroll-reveal">
-                            <i class="fab fa-node-js"></i>
-                            <span class="skill-name">Node.js</span>
-                        </div>
-                        <div class="skill-item scroll-reveal">
-                            <i class="fab fa-git-alt"></i>
-                            <span class="skill-name">Git</span>
-                        </div>
-                    </div>
+                <div class="skill-point" style="--angle: 225deg">
+                  <span class="point-label">React</span>
                 </div>
-                <h3 class="section-title creative-title">Outils créatifs</h3>
-                <div class="skills-grid">
-                    <div class="skills-column">
-                        <div class="skill-item scroll-reveal">
-                            <span class="skill-icon">Ps</span>
-                            <span class="skill-name">Photoshop</span>
-                        </div>
-                        <div class="skill-item scroll-reveal">
-                            <span class="skill-icon">Ai</span>
-                            <span class="skill-name">Illustrator</span>
-                        </div>
-                        <div class="skill-item scroll-reveal">
-                            <i class="fab fa-figma"></i>
-                            <span class="skill-name">Figma</span>
-                        </div>
-                    </div>
-                    <div class="skills-column">
-                        <div class="skill-item scroll-reveal">
-                            <span class="skill-icon">Ae</span>
-                            <span class="skill-name">After Effects</span>
-                        </div>
-                        <div class="skill-item scroll-reveal">
-                            <span class="skill-icon">Pr</span>
-                            <span class="skill-name">Premiere Pro</span>
-                        </div>
-                        <div class="skill-item scroll-reveal">
-                            <i class="fas fa-pencil-ruler"></i>
-                            <span class="skill-name">UI/UX Design</span>
-                        </div>
-                    </div>
+                <div class="skill-point" style="--angle: 315deg">
+                  <span class="point-label">UI/UX</span>
                 </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section id="projets" class="projets">
-            <div class="section-container">
-                <h2 class="section-title">Projets</h2>
-                <div class="carousel">
-                    <div class="carousel-inner">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <video autoplay loop nocontrols muted loading="lazy">
-                                    <source src="./assets/videos/LandingPage.mp4" type="video/mp4">
-                                    <track src="./assets/videos/LandingPage.mp4" kind="captions" srclang="fr" label="Français">
-                                    Votre navigateur ne supporte pas la vidéo.
-                                </video>
-                                <div class="project-overlay">
-                                    <div class="project-tech">
-                                        <span class="tech-tag"><i class="fab fa-html5"></i></span>
-                                        <span class="tech-tag"><i class="fab fa-css3-alt"></i></span>
-                                        <span class="tech-tag"><i class="fab fa-js"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3>Landing Page d'un questionnaire intéractif</h3>
-                                <p>Intégration d'un questionnaire interactif avec HTML, CSS et JavaScript pour les générations au travail</p>
-                                <div class="project-links">
-                                    <a target="_blank" href="https://badmisterh.github.io/Management/index.html" class="project-link">
-                                        <i class="fas fa-globe"></i>
-                                        <span>Demo</span>
-                                    </a>
-                                    <a target="_blank" href="https://github.com/BadMisterH/Management" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                        <span>Code</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-image">
-                                <video autoplay loop nocontrols muted loading="lazy">
-                                    <source src="./assets/videos/PokedexFigma.mp4" type="video/mp4">
-                                    <track src="./assets/videos/PokedexFigma.mp4" kind="captions" srclang="fr" label="Français">
-                                    Votre navigateur ne supporte pas la vidéo.
-                                </video>
-                                <div class="project-overlay">
-                                    <div class="project-tech">
-                                        <span class="tech-tag"><i class="fab fa-cuttlefish"></i></span>
-                                        <span class="tech-tag"><i class="fab fa-figma"></i></span>
-                                        <span class="tech-tag"><i class="fab fa-react"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3>Application Mobile Pokedex / Arduino</h3>
-                                <p>Application mobile de recherche de Pokémon utilisant l'envoi de données via Bluetooth, réceptionnées par l'Arduino, pour les écrire sur une carte NFC et les afficher dans l'application.</p>
-                                <div class="project-links">
-                                    <!-- <a href="#" class="project-link">
-                                        <i class="fas fa-globe"></i>
-                                        <span>Demo</span>
-                                    </a> -->
-                                    <a target="_blank" href="https://github.com/BadMisterH/PokeArduino" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                        <span>Code Cpp</span>
-                                    </a>
-
-                                    <a target="_blank" href="https://github.com/BadMisterH/PEDRO" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                        <span>Code React.TS</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-image">
-                                <video autoplay loop nocontrols muted loading="lazy">
-                                    <source src="./assets/videos/HaliteAI.mp4" type="video/mp4">
-                                    <track src="./assets/videos/HaliteAI.mp4" kind="captions" srclang="fr" label="Français">
-                                    Votre navigateur ne supporte pas la vidéo.
-                                </video>
-                                <div class="project-overlay">
-                                    <div class="project-tech">
-                                        <span class="tech-tag"><i class="fab fa-cuttlefish"></i></span>
-                                        <span class="tech-tag"><i class="fas fa-robot"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3>Création d'un bot ai pour gagner au jeu Halite</h3>
-                                <p>Création d'un bot permettant de récupérer un maximum de ressources sur le jeu Halite</p>
-                                <div class="project-links">
-                                    <!-- <a href="#" class="project-link">
-                                        <i class="fas fa-globe"></i>
-                                        <span>Demo</span>
-                                    </a> -->
-                                    <a target="_blank" href="https://github.com/BadMisterH/HaliteAI/tree/main" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                        <span>Code</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-image">
-                                <video autoplay loop nocontrols muted loading="lazy">
-                                    <source src="./assets/videos/NotifyAI.mp4" type="video/mp4">
-                                    <track src="./assets/videos/NotifyAI.mp4" kind="captions" srclang="fr" label="Français">
-                                    Votre navigateur ne supporte pas la vidéo.
-                                </video>
-                                <div class="project-overlay">
-                                    <div class="project-tech">
-                                        <span class="tech-tag"><i class="fab fa-wordpress"></i></span>
-                                        <span class="tech-tag"><i class="fab fa-css3-alt"></i></span>
-                                        <span class="tech-tag"><i class="fab fa-js"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3>Création du site Vitrine Notify AI de A à Z</h3>
-                                <p>Réalisation du parcours utilisateur + création des wireframes / maquettes + intégration sur WordPress</p>
-                                <div class="project-links">
-                                    <a target="_blank" href="https://notify-group.com/" class="project-link">
-                                        <i class="fas fa-globe"></i>
-                                        <span>Demo</span>
-                                    </a>
-                                    <!-- <a href="https://github.com/BadMisterH/HaliteAI/tree/main" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                        <span>Code</span>
-                                    </a> -->
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-image">
-                                <video autoplay loop nocontrols muted loading="lazy">
-                                    <source src="./assets/videos/Kocosmetic.mp4" type="video/mp4">
-                                    <track src="./assets/videos/Kocosmetic.mp4" kind="captions" srclang="fr" label="Français">
-                                    Votre navigateur ne supporte pas la vidéo.
-                                </video>
-                                <div class="project-overlay">
-                                    <div class="project-tech">
-                                        <span class="tech-tag"><i class="fab fa-wordpress"></i></span>
-                                        <span class="tech-tag"><i class="fab fa-shopify"></i></span>
-                                        <span class="tech-tag"><i class="fab fa-css3-alt"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3>Création du site e-commerce Kocosmetic de A à Z</h3>
-                                <p>Réalisation du parcours utilisateur + création des wireframes / maquettes + intégration sur Shopify / WordPress</p>
-                                <div class="project-links">
-                                    <a target="_blank" href="https://kocosmetic.fr/" class="project-link">
-                                        <i class="fas fa-globe"></i>
-                                        <span>Demo</span>
-                                    </a>
-                                    <!-- <a href="https://github.com/BadMisterH/HaliteAI/tree/main" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                        <span>Code</span>
-                                    </a> -->
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-image">
-                                <video autoplay loop nocontrols muted loading="lazy">
-                                    <source src="./assets/videos/Cita-connect.mp4" type="video/mp4">
-                                    <track src="./assets/videos/Cita-connect.mp4" kind="captions" srclang="fr" label="Français">
-                                    Votre navigateur ne supporte pas la vidéo.
-                                </video>
-                                <div class="project-overlay">
-                                    <div class="project-tech">
-                                        <span class="tech-tag"><i class="fab fa-cuttlefish"></i></span>
-                                        <span class="tech-tag"><i class="fas fa-robot"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3>Cita-connect</h3>
-                                <p>Cita’connect est une application destinée à renforcer les liens entre les habitants et leur mairie, en créant un sentiment d’appartenance et d’écoute.</p>
-                                <div class="project-links">
-                                    <a target="_blank" href="https://github.com/BadMisterH/Cita-connect" target="_blank" class="project-link">
-                                        <i class="fab fa-github"></i>
-                                        <span>Code</span>
-                                    </a>
-                                    <a target="_blank" href="https://www.figma.com/design/sjmPGWskAkI6hG6XMdvS2N/Cita'connect?node-id=0-1&t=iWJFao3UHDZ8kOqc-1" target="_blank" class="project-link">
-                                        <i class="fas fa-globe"></i>
-                                        <span>Maquettes</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button class="carousel-button prev" aria-label="Précédent">
-                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                    </button>
-                    <button class="carousel-button next" aria-label="Suivant">
-                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                    </button>
-
-                    <div class="carousel-dots"></div>
+      <section id="formations" class="formations">
+        <div class="section-container">
+          <h2 class="section-title">Formations</h2>
+          <div class="radar-timeline">
+            <div class="timeline-wrapper">
+              <div class="timeline-item">
+                <div class="timeline-dot">
+                  <div class="radar-ping"></div>
                 </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="section-container">
-                <h2 class="section-title fade-in">Contact + CV QR Code</h2>
-                <div class="contact-grid">
-                    <div class="contact-info-card fade-in-up">
-                        <div class="card-header">
-                            <div class="signal-indicator">
-                                <div class="signal-dot pulse-effect"></div>
-                                <div class="signal-waves">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </div>
-                            <h3>Status: Online</h3>
-                        </div>
-                        <div class="contact-details fade-in">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span class="font-contact">Paris, France</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>06 86 01 11 47</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>badraitoufel5@gmail.com</span>
-                            </div>
-                        </div>
-                        <div class="social-links fade-in">
-                            <a target="_blank" href="https://www.linkedin.com/in/badr-khazzani-b9126b195/" class="social-link" aria-label="Visitez mon profil Linkedin">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a target="_blank" href="https://github.com/BadMisterH" class="social-link" aria-label="Consultez mon profil GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div id="threejs-cube" class="fade-in"></div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-date">2019 - 2021</span>
+                    <h3>DUT en multimédia et internet</h3>
+                    <span class="timeline-company"
+                      >IUT de Champs-sur-Marne</span
+                    >
+                  </div>
+                  <div class="timeline-body">
+                    <ul>
+                      <li>Création de contenu multimédia</li>
+                      <li>Développement web</li>
+                      <li>Communication digitale</li>
+                    </ul>
+                  </div>
+                  <div class="timeline-tech">
+                    <span>Multimédia</span>
+                    <span>Web</span>
+                    <span>Communication</span>
+                  </div>
                 </div>
-            </div>
-        </section>
+              </div>
 
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-line"></div>
-                <p>&copy; 2025 KHAZZANI Badr</p>
+              <div class="timeline-item">
+                <div class="timeline-dot">
+                  <div class="radar-ping"></div>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-date">2021 - 2022</span>
+                    <h3>Licence Professionnelle métiers du web</h3>
+                    <span class="timeline-company">Université de Vélizy</span>
+                  </div>
+                  <div class="timeline-body">
+                    <ul>
+                      <li>Conception et développement web</li>
+                      <li>UX/UI Design</li>
+                      <li>Intégration web responsive</li>
+                    </ul>
+                  </div>
+                  <div class="timeline-tech">
+                    <span>Web Design</span>
+                    <span>UX/UI</span>
+                    <span>Responsive Design</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot">
+                  <div class="radar-ping"></div>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-date">2022 - 2023</span>
+                    <h3>Licence Pro en administration de sites web</h3>
+                    <span class="timeline-company">Université du Havre</span>
+                  </div>
+                  <div class="timeline-body">
+                    <ul>
+                      <li>Administration de serveurs web</li>
+                      <li>Développement front-end et back-end</li>
+                      <li>Gestion de bases de données</li>
+                    </ul>
+                  </div>
+                  <div class="timeline-tech">
+                    <span>Administration Web</span>
+                    <span>Développement Full-Stack</span>
+                    <span>SQL</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot">
+                  <div class="radar-ping"></div>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-date">2023 - 2026</span>
+                    <h3>Ingénieur en Informatique</h3>
+                    <span class="timeline-company"
+                      >CNAM (Nouvelle-Aquitaine, Angoulême)</span
+                    >
+                  </div>
+                  <div class="timeline-body">
+                    <ul>
+                      <li>Spécialisation en développement web</li>
+                      <li>Projets en équipe et gestion de projet</li>
+                      <li>Apprentissage des technologies modernes</li>
+                    </ul>
+                  </div>
+                  <div class="timeline-tech">
+                    <span>Développement Web</span>
+                    <span>Base de données</span>
+                    <span>Gestion de Projet</span>
+                  </div>
+                </div>
+              </div>
             </div>
-        </footer>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiences" class="experiences">
+        <div class="section-container">
+          <h2 class="section-title">Expériences</h2>
+          <div class="radar-timeline">
+            <div class="timeline-wrapper">
+              <div class="timeline-item">
+                <div class="timeline-dot">
+                  <div class="radar-ping"></div>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-date">Avr 2021 - Juil 2021</span>
+                    <h3>Développeur Front-End</h3>
+                    <span class="timeline-company"
+                      >JC Consulting, Ermont (95)</span
+                    >
+                  </div>
+                  <div class="timeline-body">
+                    <ul>
+                      <li>Intégration CMS WordPress</li>
+                      <li>Création d'un site web responsive</li>
+                      <li>Optimisation SEO et performances</li>
+                    </ul>
+                  </div>
+                  <div class="timeline-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+                    <span>React</span>
+                    <span>WordPress</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot">
+                  <div class="radar-ping"></div>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-date">Avr 2023 - Sept 2023</span>
+                    <h3>Webdesigner</h3>
+                    <span class="timeline-company">Notify AI, Paris (75)</span>
+                  </div>
+                  <div class="timeline-body">
+                    <ul>
+                      <li>Création de landing pages avec Figma</li>
+                      <li>Intégration de nouveaux sites WordPress</li>
+                      <li>Mise en place des parcours utilisateur</li>
+                    </ul>
+                  </div>
+                  <div class="timeline-tech">
+                    <span>WordPress</span>
+                    <span>Figma</span>
+                    <span>Illustrator</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item active">
+                <div class="timeline-dot">
+                  <div class="radar-ping"></div>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-header">
+                    <span class="timeline-date">Déc 2023 - Fév 2024</span>
+                    <h3>Webmaster</h3>
+                    <span class="timeline-company"
+                      >Kocosmetic, Choisy-le-Roi (94)</span
+                    >
+                  </div>
+                  <div class="timeline-body">
+                    <ul>
+                      <li>Création complète du site e-commerce en autonomie</li>
+                      <li>
+                        Mise en place des parcours utilisateur et communication
+                      </li>
+                      <li>Optimisation des routes et des temps de réponse</li>
+                    </ul>
+                  </div>
+                  <div class="timeline-tech">
+                    <span>PHP</span>
+                    <span>JavaScript</span>
+                    <span>Python</span>
+                    <span>WordPress</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="competences" class="competences">
+        <div class="section-container">
+          <h2 class="section-title">Compétences</h2>
+
+          <h3 class="section-title creative-title">Langage de programmation</h3>
+
+          <div class="skills-grid">
+            <div class="skills-column">
+              <div class="skill-item scroll-reveal">
+                <i class="fab fa-html5"></i>
+                <span class="skill-name">HTML/CSS/SCSS</span>
+              </div>
+              <div class="skill-item scroll-reveal">
+                <i class="fab fa-js"></i>
+                <span class="skill-name">Javascript</span>
+              </div>
+              <div class="skill-item scroll-reveal">
+                <i class="fab fa-react"></i>
+                <span class="skill-name">React</span>
+              </div>
+              <div class="skill-item scroll-reveal">
+                <i class="fab fa-wordpress"></i>
+                <span class="skill-name">WordPress</span>
+              </div>
+              <div class="skill-item scroll-reveal">
+                <i class="fas fa-gamepad"></i>
+                <span class="skill-name">Unity / C#</span>
+              </div>
+            </div>
+            <div class="skills-column">
+              <div class="skill-item scroll-reveal">
+                <i class="fab fa-python"></i>
+                <span class="skill-name">Python</span>
+              </div>
+              <div class="skill-item scroll-reveal">
+                <i class="fab fa-php"></i>
+                <span class="skill-name">PHP</span>
+              </div>
+              <div class="skill-item scroll-reveal">
+                <i class="fas fa-database"></i>
+                <span class="skill-name">SQL</span>
+              </div>
+              <div class="skill-item scroll-reveal">
+                <i class="fab fa-node-js"></i>
+                <span class="skill-name">Node.js</span>
+              </div>
+              <div class="skill-item scroll-reveal">
+                <i class="fab fa-git-alt"></i>
+                <span class="skill-name">Git</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="section-title creative-title">Outils créatifs</h3>
+          <div class="skills-grid">
+            <div class="skills-column">
+              <div class="skill-item scroll-reveal">
+                <span class="skill-icon">Ps</span>
+                <span class="skill-name">Photoshop</span>
+              </div>
+              <div class="skill-item scroll-reveal">
+                <span class="skill-icon">Ai</span>
+                <span class="skill-name">Illustrator</span>
+              </div>
+              <div class="skill-item scroll-reveal">
+                <i class="fab fa-figma"></i>
+                <span class="skill-name">Figma</span>
+              </div>
+            </div>
+            <div class="skills-column">
+              <div class="skill-item scroll-reveal">
+                <span class="skill-icon">Ae</span>
+                <span class="skill-name">After Effects</span>
+              </div>
+              <div class="skill-item scroll-reveal">
+                <span class="skill-icon">Pr</span>
+                <span class="skill-name">Premiere Pro</span>
+              </div>
+              <div class="skill-item scroll-reveal">
+                <i class="fas fa-pencil-ruler"></i>
+                <span class="skill-name">UI/UX Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projets" class="projets">
+        <div class="section-container">
+          <h2 class="section-title">Projets</h2>
+
+          <div class="btn-all-projects">
+            <button class="projet-btn">projet</button>
+            <button class="design-btn">design</button>
+          </div>
+
+          <div class="container-projet">
+            <div class="box-dev">
+              <div class="project-card">
+                <div class="project-image">
+                  <video
+                    autoplay=""
+                    loop=""
+                    nocontrols=""
+                    muted=""
+                    loading="lazy"
+                  >
+                    <source
+                      src="./assets/videos/HaliteAI.mp4"
+                      type="video/mp4"
+                    />
+                    <track
+                      src="./assets/videos/HaliteAI.mp4"
+                      kind="captions"
+                      srclang="fr"
+                      label="Français"
+                    />
+                    Votre navigateur ne supporte pas la vidéo.
+                  </video>
+                  <div class="project-overlay">
+                    <div class="project-tech">
+                      <span class="tech-tag"
+                        ><i class="fab fa-cuttlefish"></i
+                      ></span>
+                      <span class="tech-tag"><i class="fas fa-robot"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3>Création d'un bot ai pour gagner au jeu Halite</h3>
+                  <p>
+                    Création d'un bot permettant de récupérer un maximum de
+                    ressources sur le jeu Halite
+                  </p>
+                  <div class="project-links">
+                    <!-- <a href="#" class="project-link">
+                                <i class="fas fa-globe"></i>
+                                <span>Demo</span>
+                            </a> -->
+                    <a
+                      target="_blank"
+                      href="https://github.com/BadMisterH/HaliteAI/tree/main"
+                      class="project-link"
+                    >
+                      <i class="fab fa-github"></i>
+                      <span>Code</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-image">
+                  <video
+                    autoplay=""
+                    loop=""
+                    nocontrols=""
+                    muted=""
+                    loading="lazy"
+                  >
+                    <source
+                      src="./assets/videos/NotifyAI.mp4"
+                      type="video/mp4"
+                    />
+                    <track
+                      src="./assets/videos/NotifyAI.mp4"
+                      kind="captions"
+                      srclang="fr"
+                      label="Français"
+                    />
+                    Votre navigateur ne supporte pas la vidéo.
+                  </video>
+                  <div class="project-overlay">
+                    <div class="project-tech">
+                      <span class="tech-tag"
+                        ><i class="fab fa-wordpress"></i
+                      ></span>
+                      <span class="tech-tag"
+                        ><i class="fab fa-css3-alt"></i
+                      ></span>
+                      <span class="tech-tag"><i class="fab fa-js"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3>Création du site Vitrine Notify AI de A à Z</h3>
+                  <p>
+                    Réalisation du parcours utilisateur + création des
+                    wireframes / maquettes + intégration sur WordPress
+                  </p>
+                  <div class="project-links">
+                    <a
+                      target="_blank"
+                      href="https://notify-group.com/"
+                      class="project-link"
+                    >
+                      <i class="fas fa-globe"></i>
+                      <span>Demo</span>
+                    </a>
+                    <!-- <a href="https://github.com/BadMisterH/HaliteAI/tree/main" class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Code</span>
+                        </a> -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-image">
+                  <video
+                    autoplay=""
+                    loop=""
+                    nocontrols=""
+                    muted=""
+                    loading="lazy"
+                  >
+                    <source
+                      src="./assets/videos/PokedexFigma.mp4"
+                      type="video/mp4"
+                    />
+                    <track
+                      src="./assets/videos/PokedexFigma.mp4"
+                      kind="captions"
+                      srclang="fr"
+                      label="Français"
+                    />
+                    Votre navigateur ne supporte pas la vidéo.
+                  </video>
+                  <div class="project-overlay">
+                    <div class="project-tech">
+                      <span class="tech-tag"
+                        ><i class="fab fa-cuttlefish"></i
+                      ></span>
+                      <span class="tech-tag"><i class="fab fa-figma"></i></span>
+                      <span class="tech-tag"><i class="fab fa-react"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3>Application Mobile Pokedex / Arduino</h3>
+                  <p>
+                    Application mobile de recherche de Pokémon utilisant l'envoi
+                    de données via Bluetooth, réceptionnées par l'Arduino, pour
+                    les écrire sur une carte NFC et les afficher dans
+                    l'application.
+                  </p>
+                  <div class="project-links">
+                    <!-- <a href="#" class="project-link">
+                            <i class="fas fa-globe"></i>
+                            <span>Demo</span>
+                        </a> -->
+                    <a
+                      target="_blank"
+                      href="https://github.com/BadMisterH/PokeArduino"
+                      class="project-link"
+                    >
+                      <i class="fab fa-github"></i>
+                      <span>Code Cpp</span>
+                    </a>
+
+                    <a
+                      target="_blank"
+                      href="https://github.com/BadMisterH/PEDRO"
+                      class="project-link"
+                    >
+                      <i class="fab fa-github"></i>
+                      <span>Code React.TS</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <div class="project-image">
+                  <video
+                    autoplay=""
+                    loop=""
+                    nocontrols=""
+                    muted=""
+                    loading="lazy"
+                  >
+                    <source
+                      src="./assets/videos/Kocosmetic.mp4"
+                      type="video/mp4"
+                    />
+                    <track
+                      src="./assets/videos/Kocosmetic.mp4"
+                      kind="captions"
+                      srclang="fr"
+                      label="Français"
+                    />
+                    Votre navigateur ne supporte pas la vidéo.
+                  </video>
+                  <div class="project-overlay">
+                    <div class="project-tech">
+                      <span class="tech-tag"
+                        ><i class="fab fa-wordpress"></i
+                      ></span>
+                      <span class="tech-tag"
+                        ><i class="fab fa-shopify"></i
+                      ></span>
+                      <span class="tech-tag"
+                        ><i class="fab fa-css3-alt"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3>Création du site e-commerce Kocosmetic de A à Z</h3>
+                  <p>
+                    Réalisation du parcours utilisateur + création des
+                    wireframes / maquettes + intégration sur Shopify / WordPress
+                  </p>
+                  <div class="project-links">
+                    <a
+                      target="_blank"
+                      href="https://kocosmetic.fr/"
+                      class="project-link"
+                    >
+                      <i class="fas fa-globe"></i>
+                      <span>Demo</span>
+                    </a>
+                    <!-- <a href="https://github.com/BadMisterH/HaliteAI/tree/main" class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Code</span>
+                        </a> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-graph">
+              <div class="project-card">
+                <div class="project-image">
+                  <video
+                    autoplay=""
+                    loop=""
+                    nocontrols=""
+                    muted=""
+                    loading="lazy"
+                  >
+                    <source
+                      src="./assets/videos/Cita-connect.mp4"
+                      type="video/mp4"
+                    />
+                    <track
+                      src="./assets/videos/Cita-connect.mp4"
+                      kind="captions"
+                      srclang="fr"
+                      label="Français"
+                    />
+                    Votre navigateur ne supporte pas la vidéo.
+                  </video>
+                  <div class="project-overlay">
+                    <div class="project-tech">
+                      <span class="tech-tag"
+                        ><i class="fab fa-cuttlefish"></i
+                      ></span>
+                      <span class="tech-tag"><i class="fas fa-robot"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3>Cita-connect</h3>
+                  <p>
+                    Cita’connect est une application destinée à renforcer les
+                    liens entre les habitants et leur mairie, en créant un
+                    sentiment d’appartenance et d’écoute.
+                  </p>
+                  <div class="project-links">
+                    <a
+                      target="_blank"
+                      href="https://github.com/BadMisterH/Cita-connect"
+                      class="project-link"
+                    >
+                      <i class="fab fa-github"></i>
+                      <span>Code</span>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://www.figma.com/design/sjmPGWskAkI6hG6XMdvS2N/Cita'connect?node-id=0-1&amp;t=iWJFao3UHDZ8kOqc-1"
+                      class="project-link"
+                    >
+                      <i class="fas fa-globe"></i>
+                      <span>Maquettes</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cards"></div>
+              <div class="cards"></div>
+              <div class="cards"></div>
+              <div class="cards"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="section-container">
+          <h2 class="section-title fade-in">Contact + CV QR Code</h2>
+          <div class="contact-grid">
+            <div class="contact-info-card fade-in-up">
+              <div class="card-header">
+                <div class="signal-indicator">
+                  <div class="signal-dot pulse-effect"></div>
+                  <div class="signal-waves">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+                <h3>Status: Online</h3>
+              </div>
+              <div class="contact-details fade-in">
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span class="font-contact">Paris, France</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-phone"></i>
+                  <span>06 86 01 11 47</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <span>badraitoufel5@gmail.com</span>
+                </div>
+              </div>
+              <div class="social-links fade-in">
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/badr-khazzani-b9126b195/"
+                  class="social-link"
+                  aria-label="Visitez mon profil Linkedin"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://github.com/BadMisterH"
+                  class="social-link"
+                  aria-label="Consultez mon profil GitHub"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div id="threejs-cube" class="fade-in"></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-line"></div>
+          <p>&copy; 2025 KHAZZANI Badr</p>
+        </div>
+      </footer>
     </main>
 
     <script defer src="js/main.js"></script>
@@ -665,5 +807,5 @@
     <script defer src="js/radar-effects.js"></script>
     <script defer src="js/skills-animation.js"></script>
     <script defer src="js/carousel.js"></script>
-</body>
+  </body>
 </html>
