@@ -164,3 +164,9 @@ button::after {
     width: 100%;
   }
 }
+
+@media (max-width: 408px) {
+  .contact-info-card {
+    right: 52px;
+  }
+}
