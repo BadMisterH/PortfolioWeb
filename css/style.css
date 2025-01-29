@@ -453,7 +453,7 @@ header {
 @media (max-width: 1400px) {
   .section-container {
     max-width: 1200px;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
   }
   .contact-grid {
     gap: 3rem;
@@ -2759,10 +2759,7 @@ header {
   .carousel-container {
     padding: 3rem 1.5rem;
   }
-  .carousel-track {
-    gap: 2rem;
-    padding: 1.5rem 1rem;
-  }
+
   .project-card {
     flex: 0 0 calc(80% - 2rem);
   }
@@ -2786,11 +2783,8 @@ header {
   }
 }
 @media (min-width: 992px) {
-  .carousel-container {
-    padding: 4rem 2rem;
-  }
   .project-card {
-    flex: 0 0 calc(70% - 2rem);
+    flex: 0 0 calc(50% - 2rem) !important;
   }
   .project-image {
     height: 300px;
@@ -2811,17 +2805,17 @@ header {
   }
 }
 @media (min-width: 1200px) {
-  .project-card {
-    flex: 0 0 calc(45% - 2.5rem) !important;
-  }
+  /* .project-card {
+    flex: 0 0 calc(45% - 2.5rem);
+  } */
   .project-image {
     height: 350px;
   }
 }
 @media (min-width: 1400px) {
-  .carousel-container {
+  /* .carousel-container {
     padding: 5rem 2.5rem;
-  }
+  } */
   .project-card {
     flex: 0 0 calc(50% - 2.5rem);
   }
@@ -2833,14 +2827,7 @@ header {
   }
 }
 @media (hover: none) {
-  .carousel-container {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-  .carousel-container::-webkit-scrollbar {
-    display: none;
-  }
+
   .project-card {
     scroll-snap-align: center;
   }
@@ -2853,25 +2840,15 @@ header {
   }
 }
 @media (min-width: 1800px) {
-  .carousel-container {
-    max-width: 1800px;
-    padding: 6rem 3rem;
-  }
   .project-card {
-    flex: 0 0 calc(45% - 3rem);
+    flex: 0 0 calc(50% - 3rem);
   }
 }
 section {
   margin-bottom: 2rem;
 }
-.carousel-container {
-  padding: 4rem 2rem;
-  margin: 2rem auto;
-}
-.carousel-track {
-  gap: 2.5rem;
-  padding: 1.5rem;
-}
+
+
 .project-card {
   margin-bottom: 1rem;
   padding: 0;
@@ -2896,15 +2873,6 @@ section {
   margin-top: 3rem;
 }
 @media (max-width: 1400px) {
-  section {
-    padding: 5rem 0;
-  }
-  .carousel-container {
-    padding: 3rem 1.5rem;
-  }
-  .carousel-track {
-    gap: 2rem;
-  }
   .project-content {
     padding: 1.8rem;
   }
@@ -2920,12 +2888,7 @@ section {
   section {
     padding: 4rem 0;
   }
-  .carousel-container {
-    padding: 2.5rem 1.2rem;
-  }
-  .carousel-track {
-    gap: 1.8rem;
-  }
+
   .project-content {
     padding: 1.5rem;
   }
