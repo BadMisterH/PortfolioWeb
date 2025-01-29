@@ -68,6 +68,7 @@ button {
   overflow: hidden;
   transition: transform 0.3s ease, background 0.4s ease, box-shadow 0.4s ease;
   outline: none;
+  width: 250px;
 }
 
 /* Hover effect */
