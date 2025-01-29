@@ -138,3 +138,29 @@ button::after {
 .fade-in {
   animation: fadeIn 0.5s ease-in-out;
 }
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+  .box-dev,
+  .box-graph {
+    padding: 0px !important;
+  }
+
+  .container-projet {
+    margin-top: 30px !important;
+    padding: 0px !important;
+  }
+
+  .btn-all-projects {
+    width: 250px;
+  }
+
+  .btn-all-projects button:nth-child(2) {
+    margin-top: 20px !important;
+  }
+
+  .btn-all-projects button {
+    width: 100%;
+  }
+}
