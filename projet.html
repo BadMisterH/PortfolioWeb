@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="projet.css" />
+    <link rel="stylesheet" href="./css/carousel.css" />
+  </head>
+  <body>
+    
+
+    <script>
+      const blocDev = document.querySelector(".projet-dev");
+      const blocDesign = document.querySelector(".projet-design");
+      const btnDev = document.querySelector(".box-btn-nav button:nth-child(1)");
+      const btnDesign = document.querySelector(
+        ".box-btn-nav button:nth-child(2)"
+      );
+
+      function toggleSection(showSection, hideSection) {
+        // Masquer la section active
+        hideSection.classList.remove("visible");
+        hideSection.classList.add("hidden");
+
+        // Une fois l'animation terminée, cacher complètement l'élément
+        setTimeout(() => {
+          hideSection.style.display = "none";
+
+          // Afficher la nouvelle section
+          showSection.style.display = "flex";
+          setTimeout(() => {
+            showSection.classList.remove("hidden");
+            showSection.classList.add("visible");
+          }, 10); // Petit délai pour appliquer l'animation
+        }, 500); // Durée de la transition CSS
+      }
+
+      // Gestion des événements
+      btnDev.addEventListener(
+        "click",
+        () => toggleSection(blocDev, blocDesign) // Afficher Dev et cacher Design
+      );
+      btnDesign.addEventListener(
+        "click",
+        () => toggleSection(blocDesign, blocDev) // Afficher Design et cacher Dev
+      );
+    </script>
+  </body>
+</html>

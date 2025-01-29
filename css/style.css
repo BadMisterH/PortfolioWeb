@@ -478,7 +478,7 @@ header {
     grid-template-columns: 1fr;
   }
   .project-card {
-    flex: 0 0 calc(50% - 2rem);
+    flex: 0 0 calc(45% - 2rem);
   }
 }
 @media (max-width: 992px) {
@@ -2812,7 +2812,7 @@ header {
 }
 @media (min-width: 1200px) {
   .project-card {
-    flex: 0 0 calc(60% - 2.5rem);
+    flex: 0 0 calc(45% - 2.5rem) !important;
   }
   .project-image {
     height: 350px;
